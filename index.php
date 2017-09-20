@@ -38,6 +38,7 @@
                         <div class="panel-body">
                             <!--Content body hier! -->
                             <p>Hier word de centrale camera weergegeven. </p>
+                            <img src="images/camera.jpg" class="img-responsive" alt="camera" />
 
                         </div>
                     </div>
@@ -51,6 +52,7 @@
                         <div class="panel-body">
                             <!--Content body hier! -->
                             <p> Hier wordt de camera van de battlebot weergegeven. </p>
+                            <img src="images/camera.jpg" class="img-responsive" alt="camera" />
 
                         </div>
                     </div>
@@ -151,14 +153,15 @@
 
             <!-- HIER EINDIGD DE CONTENT -->
 
+
         </div>
         <!-- /.container-fluid -->
 
     </div>
     <!-- /#page-wrapper -->
-
 </div>
 <!-- /#wrapper -->
+
 
 <!-- jQuery -->
 <script src="js/jquery.js"></script>

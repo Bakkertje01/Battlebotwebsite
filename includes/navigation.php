@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
         </button>
 
-        <a class="navbar-brand" href="index.php"><img src="images/logobattlebot2.png" alt="logo"></a>
+        <a class="navbar-brand" href="index.php"><img src="images/logobattlebot2.png" class="img-responsive" alt="logo"></a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
