@@ -33,11 +33,11 @@
                 <div class="col-lg-6">
                     <div class="panel panel-warning">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Centrale cam</h3>
+                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Statische camera</h3>
                         </div>
                         <div class="panel-body">
                             <!--Content body hier! -->
-                            <p>Hier word de centrale camera weergegeven. </p>
+                            <p>Hier word de statische camera weergegeven. </p>
                             <img src="images/camera.jpg" class="img-responsive" alt="camera" />
 
                         </div>
@@ -47,11 +47,11 @@
                 <div class="col-lg-6">
                     <div class="panel panel-warning">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Battlebot cam</h3>
+                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Dome camera</h3>
                         </div>
                         <div class="panel-body">
                             <!--Content body hier! -->
-                            <p> Hier wordt de camera van de battlebot weergegeven. </p>
+                            <p> Hier wordt de dome camera weergegeven. </p>
                             <img src="images/camera.jpg" class="img-responsive" alt="camera" />
 
                         </div>
@@ -64,7 +64,7 @@
                 <div class="col-lg-6">
                     <div class="panel panel-warning">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Centrale cam</h3>
+                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Tussenstanden</h3>
                         </div>
                         <div class="panel-body">
                             <!--Content body hier! -->
@@ -110,7 +110,7 @@
                 <div class="col-lg-6">
                     <div class="panel panel-warning">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Battlebot cam</h3>
+                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Data battlebots</h3>
                         </div>
                         <div class="panel-body">
                             <!--Content body hier! -->

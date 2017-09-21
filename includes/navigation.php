@@ -14,7 +14,7 @@
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Login</a>
+            <a href="login.php" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Login</a>
         </li>
     </ul>
 
@@ -28,15 +28,15 @@
             </li>
 
             <li>
-                <a href="roosters.php"><i class="fa fa-fw fa-star"></i> Battlebots</a>
+                <a href="teams.php"><i class="fa fa-fw fa-star"></i> Teams</a>
             </li>
 
             <li>
-                <a href="roosters.php"><i class="fa fa-fw fa-table"></i> Wedstrijden</a>
+                <a href="wedstrijden.php"><i class="fa fa-fw fa-table"></i> Wedstrijden</a>
             </li>
 
             <li>
-                <a href="tables.html"><i class="fa fa-fw fa-newspaper-o"></i> Regels</a>
+                <a href="regels.php"><i class="fa fa-fw fa-newspaper-o"></i> Regels</a>
             </li>
 
             <li>
