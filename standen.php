@@ -81,7 +81,7 @@ include 'Include/navigation.php';
                                         echo "<td>".$row["Groep"]."</td>";
                                         echo "<td>".$row["Naam"]."</td>";
                                         //echo "<td><a href = 'hidden.AdminOverview.php?CID=".$row['Gebruiker_ID']."'>Edit</a></td>";
-                                       // echo "<td><form action='hidden.AdminOverview.php?CID=".$row['Gebruiker_ID']."' method='POST'><input type='submit' class='btn' value='Edit'>";
+                                        echo "<td><form action='standen.php?CID=".$row['Battlebot_ID']."' method='POST'><input type='submit' class='btn' value='Edit'>";
                                         echo "<tr>";
                                     }
                                     echo "</table>";
@@ -110,22 +110,21 @@ include 'Include/navigation.php';
                                             $groep = $_POST['Groep'];
                                             $naam = $_POST['Naam'];
 
-                                            $DBcommand = "UPDATE $DBtable SET Voornaam = '$voornaam',Achternaam = '$achternaam',Email = '$email',
-                    Verified = '$verified',`Type` = '$type',Quote = '$quote' WHERE Gebruiker_ID = '$CID'";
+                                            $DBcommand = "UPDATE $DBtable SET Geluidje = '$geluidje',Groep = '$groep',Naam = '$naam' WHERE Battlebot_ID = '$CID'";
                                             $DBresult = mysqli_query($connection, $DBcommand);
                                             echo ($DBresult === false) ? "COULD NOT EXECUTE QUERY3" . mysqli_errno($connection) . " : " . mysqli_error($connection) : 'UPDATE HAS BEEN APPLIED';
-                                            header("Location: hidden.adminOverview.php");
+                                            header("Location: stenden.php");
                                         } elseif (isset($_POST['delete'])) {
                                             $DBtableBericht = 'bericht';
                                             $DBtableFiles = "files";
                                             $CID = $_GET['CID'];
-                                            $DBcommand = "DELETE FROM files WHERE Gebruiker_ID = '$CID'";
+                                            $DBcommand = "DELETE FROM files WHERE Battlebot_ID = '$CID'";
                                             $DBresult = mysqli_query($connection, $DBcommand);
                                             echo ($DBresult === false) ? "COULD NOT EXECUTE QUERY4" . mysqli_errno($connection) . " : " . mysqli_error($connection) : NULL;
-                                            $DBcommand = "DELETE FROM bericht WHERE Gebruiker_ID = '$CID'";
+                                            $DBcommand = "DELETE FROM bericht WHERE Battlebot_ID = '$CID'";
                                             $DBresult = mysqli_query($connection, $DBcommand);
                                             echo ($DBresult === false) ? "COULD NOT EXECUTE QUERY5" . mysqli_errno($connection) . " : " . mysqli_error($connection) : NULL;
-                                            $DBcommand = "DELETE FROM $DBtable WHERE Gebruiker_ID = '$CID'";
+                                            $DBcommand = "DELETE FROM $DBtable WHERE Battlebot_ID = '$CID'";
                                             $DBresult = mysqli_query($connection, $DBcommand);
                                             echo ($DBresult === false) ? "COULD NOT EXECUTE QUERY6" . mysqli_errno($connection) . " : " . mysqli_error($connection) : 'DELETION HAS BEEN APPLIED';
                                             header("Location: hidden.adminOverview.php");
