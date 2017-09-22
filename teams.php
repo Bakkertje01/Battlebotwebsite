@@ -4,14 +4,14 @@
 <head>
 
     <?php
-    include 'includes/head.php';
+    include 'Include/head.php';
     ?>
 
 </head>
 
 <body>
 <?php
-include 'includes/navigation.php';
+include 'Include/navigation.php';
 ?>
 <div id="wrapper">
     <div id="page-wrapper">
