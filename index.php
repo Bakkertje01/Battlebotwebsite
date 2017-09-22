@@ -12,7 +12,7 @@
 <body>
     <?php
     include 'includes/navigation.php';
-    include 'includes/db_connection.php';
+   // include 'includes/db_connection.php';
     ?>
 <div id="wrapper">
     <div id="page-wrapper">
