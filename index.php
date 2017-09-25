@@ -135,8 +135,8 @@
                                         <td>30 meter</td>
                                     </tr>
                                     <tr>
-                                        <th>Nog iets?</th>
-                                        <td>Vast wel</td>
+                                        <th>Display text</th>
+                                        <td>Aan</td>
                                     </tr>
                                     <tr>
                                         <th>Nog iets?</th>

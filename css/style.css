@@ -5,3 +5,13 @@
     clear:both;
     padding-top:20px;
 }
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+.loginpagina{
+    background-color:#222222;
+}
+
