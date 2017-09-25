@@ -14,14 +14,14 @@ include_once "include/db_connection.php";
 <head>
 
     <?php
-    include 'Include/head.php';
+    include 'include/head.php';
     ?>
 
 </head>
 
 <body>
 <?php
-include 'Include/navigation.php';
+include 'include/navigation.php';
 ?>
 <div id="wrapper">
     <div id="page-wrapper">
