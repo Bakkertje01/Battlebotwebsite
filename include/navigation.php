@@ -43,7 +43,7 @@
             <li>
                 <a href="standen.php"><i class="fa fa-fw fa-newspaper-o"></i> Standen</a>
             </li>
-
+<!--
             <li>
                 <a href="tables.html"><i class="fa fa-fw fa-newspaper-o"></i> Onderwerp</a>
             </li>
@@ -51,7 +51,7 @@
             <li>
                 <a href="tables.html"><i class="fa fa-fw fa-newspaper-o"></i> Onderwerp</a>
             </li>
-
+-->
         </ul>
     </div>
     <!-- /.navbar-collapse -->
