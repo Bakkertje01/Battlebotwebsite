@@ -5,6 +5,7 @@
 
     <?php
     include 'include/head.php';
+    include_once "include/db_connection.php";
     ?>
 
 </head>
@@ -40,35 +41,35 @@ include 'include/navigation.php';
                             <!--Content body hier! -->
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover ">
-                                    <thead>
-                                    <tr>
-                                        <th>Voornaam</th>
-                                        <th>Achternaam</th>
-                                        <th>Functie</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Jan</td>
-                                        <td>Jansen</td>
-                                        <td>Arduino</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jan</td>
-                                        <td>Jansen</td>
-                                        <td>Arduino</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jan</td>
-                                        <td>Jansen</td>
-                                        <td>Server</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jan</td>
-                                        <td>Jansen</td>
-                                        <td>Website</td>
-                                    </tr>
-                                    </tbody>
+                                    <?php
+                                    $DBname = "battlebot";
+                                    $DBtable = "leden";
+                                    mysqli_select_db($connection,$DBname);
+                                    echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
+                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = 1";
+                                    $DBresult = mysqli_query($connection,$DBcommand);
+                                    echo($DBresult === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
+                                    $TH = array("Naam","Achternaam","Groepsfunctie");
+                                    $X = 0;
+                                    $count = count($TH);
+                                    //echo "<table class='table table-hover table-striped table-bordered'>";
+                                    echo "<tr class='info'>";
+                                    while($X < $count ){
+                                        echo "<th>".$TH[$X]."</th>";
+                                        $X++;
+                                    }
+                                    echo "</tr>";
+                                    while($row = mysqli_fetch_assoc($DBresult)){
+                                        echo "<tr>";
+                                        echo "<td>".$row["Naam"]."</td>";
+                                        echo "<td>".$row["Achternaam"]."</td>";
+                                        echo "<td>".$row["Groepsfunctie"]."</td>";
+                                        echo "<tr>";
+                                    }
+                                    echo "</table>";
+                                    echo "<br><br>";
+
+                                    ?>
                                 </table>
                             </div>
 
@@ -85,35 +86,35 @@ include 'include/navigation.php';
                             <!--Content body hier! -->
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover ">
-                                    <thead>
-                                      <tr>
-                                        <th>Voornaam</th>
-                                        <th>Achternaam</th>
-                                        <th>Functie</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Jan</td>
-                                        <td>Jansen</td>
-                                        <td>Arduino</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jan</td>
-                                        <td>Jansen</td>
-                                        <td>Arduino</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jan</td>
-                                        <td>Jansen</td>
-                                        <td>Server</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jan</td>
-                                        <td>Jansen</td>
-                                        <td>Website</td>
-                                    </tr>
-                                    </tbody>
+                                    <?php
+                                    $DBname = "battlebot";
+                                    $DBtable = "leden";
+                                    mysqli_select_db($connection,$DBname);
+                                    echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
+                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = 2";
+                                    $DBresult = mysqli_query($connection,$DBcommand);
+                                    echo($DBresult === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
+                                    $TH = array("Naam","Achternaam","Groepsfunctie");
+                                    $X = 0;
+                                    $count = count($TH);
+                                    //echo "<table class='table table-hover table-striped table-bordered'>";
+                                    echo "<tr class='info'>";
+                                    while($X < $count ){
+                                        echo "<th>".$TH[$X]."</th>";
+                                        $X++;
+                                    }
+                                    echo "</tr>";
+                                    while($row = mysqli_fetch_assoc($DBresult)){
+                                        echo "<tr>";
+                                        echo "<td>".$row["Naam"]."</td>";
+                                        echo "<td>".$row["Achternaam"]."</td>";
+                                        echo "<td>".$row["Groepsfunctie"]."</td>";
+                                        echo "<tr>";
+                                    }
+                                    echo "</table>";
+                                    echo "<br><br>";
+
+                                    ?>
                                 </table>
                             </div>
 
@@ -134,35 +135,35 @@ include 'include/navigation.php';
                             <!--Content body hier! -->
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover ">
-                                    <thead>
-                                    <tr>
-                                        <th>Voornaam</th>
-                                        <th>Achternaam</th>
-                                        <th>Functie</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Thomas</td>
-                                        <td>Christerus</td>
-                                        <td>Arduino</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tim</td>
-                                        <td>Zuiderveld</td>
-                                        <td>Arduino</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Yaron</td>
-                                        <td>Wolf</td>
-                                        <td>Server</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Niek</td>
-                                        <td>Luttikhof</td>
-                                        <td>Website</td>
-                                    </tr>
-                                    </tbody>
+                                    <?php
+                                    $DBname = "battlebot";
+                                    $DBtable = "leden";
+                                    mysqli_select_db($connection,$DBname);
+                                    echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
+                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = 3";
+                                    $DBresult = mysqli_query($connection,$DBcommand);
+                                    echo($DBresult === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
+                                    $TH = array("Naam","Achternaam","Groepsfunctie");
+                                    $X = 0;
+                                    $count = count($TH);
+                                    //echo "<table class='table table-hover table-striped table-bordered'>";
+                                    echo "<tr class='info'>";
+                                    while($X < $count ){
+                                        echo "<th>".$TH[$X]."</th>";
+                                        $X++;
+                                    }
+                                    echo "</tr>";
+                                    while($row = mysqli_fetch_assoc($DBresult)){
+                                        echo "<tr>";
+                                        echo "<td>".$row["Naam"]."</td>";
+                                        echo "<td>".$row["Achternaam"]."</td>";
+                                        echo "<td>".$row["Groepsfunctie"]."</td>";
+                                        echo "<tr>";
+                                    }
+                                    echo "</table>";
+                                    echo "<br><br>";
+
+                                    ?>
                                 </table>
                             </div>
 
@@ -179,35 +180,35 @@ include 'include/navigation.php';
                             <!--Content body hier! -->
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover ">
-                                    <thead>
-                                    <tr>
-                                        <th>Voornaam</th>
-                                        <th>Achternaam</th>
-                                        <th>Functie</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Jan</td>
-                                        <td>Jansen</td>
-                                        <td>Arduino</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jan</td>
-                                        <td>Jansen</td>
-                                        <td>Arduino</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jan</td>
-                                        <td>Jansen</td>
-                                        <td>Server</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jan</td>
-                                        <td>Jansen</td>
-                                        <td>Website</td>
-                                    </tr>
-                                    </tbody>
+                                    <?php
+                                    $DBname = "battlebot";
+                                    $DBtable = "leden";
+                                    mysqli_select_db($connection,$DBname);
+                                    echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
+                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = 4";
+                                    $DBresult = mysqli_query($connection,$DBcommand);
+                                    echo($DBresult === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
+                                    $TH = array("Naam","Achternaam","Groepsfunctie");
+                                    $X = 0;
+                                    $count = count($TH);
+                                    //echo "<table class='table table-hover table-striped table-bordered'>";
+                                    echo "<tr class='info'>";
+                                    while($X < $count ){
+                                        echo "<th>".$TH[$X]."</th>";
+                                        $X++;
+                                    }
+                                    echo "</tr>";
+                                    while($row = mysqli_fetch_assoc($DBresult)){
+                                        echo "<tr>";
+                                        echo "<td>".$row["Naam"]."</td>";
+                                        echo "<td>".$row["Achternaam"]."</td>";
+                                        echo "<td>".$row["Groepsfunctie"]."</td>";
+                                        echo "<tr>";
+                                    }
+                                    echo "</table>";
+                                    echo "<br><br>";
+
+                                    ?>
                                 </table>
                             </div>
 
