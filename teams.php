@@ -86,7 +86,7 @@ include 'include/navigation.php';
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover ">
                                     <thead>
-                                    <tr>
+                                      <tr>
                                         <th>Voornaam</th>
                                         <th>Achternaam</th>
                                         <th>Functie</th>
