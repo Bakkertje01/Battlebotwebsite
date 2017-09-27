@@ -19,8 +19,8 @@ include 'Include/navigation.php';
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="page-header">
-						Titel van pagina
-						<small>Hallo</small>
+						Controller
+						<small>INF1F1A</small>
 					</h1>
 				</div>
 			</div>

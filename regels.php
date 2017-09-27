@@ -93,10 +93,16 @@ include 'include/navigation.php';
 						</div>
 						<div class="panel-body">
 							<!--Content body hier! -->
-							<h4></h4>
-							<p></p>
-							<h4></h4>
-
+							<h4>Uitleg</h4>
+							<p>
+                                Het speelveld is een vierkant van 3x3 meter.
+                                Elke hoek van het vierkant is een startpositie, dit is variable.
+                            </p>
+							<h4>Spelregels</h4>
+                            <p>Je battlebot moet in de ring blijven.
+                                verder is het een battle royale
+                                Elke bot moet een aanvallende tactiek hebben.
+                            </p>
 						</div>
 					</div>
 				</div>
@@ -105,13 +111,30 @@ include 'include/navigation.php';
 				<div class="col-lg-12">
 					<div class="panel panel-info">
 						<div class="panel-heading">
-							<h3 class="panel-title"><i class="fa-fw"></i> obstacle</h3>
+							<h3 class="panel-title"><i class="fa-fw"></i> Obstakels ontwijken</h3>
 						</div>
 						<div class="panel-body">
-							<!--Content body hier! -->
-							<p> Complete breedte. Zet hier de content in die de pagina moet weergeven.
-								hier komen de regels van de sumo</p>
-
+							<h4>Uitleg</h4>
+							<p> De battlebot mag geen obstakels aanraken die in de ring staan gedurende 1 minuut.
+                                6 objecten, elk team mag 2 objecten willekeurig plaatsen in het vierkant.
+                            </p>
+                            <p>Beginscore is 3 punten. Wanneer een object wordt geraakt krijgt het team -1 punt.
+                                De eindscore wordt bij de teamscore opgeld.
+                            </p>
+                            <p>Vierkant is 2x2 meter.</p>
+                            <h4>Spelregels</h4>
+                            <ul>
+                                <li>Je moet blijven bewegen</li>
+                                <li>Geen rondjes draaien</li>
+                                <li>Tijdsduur 1 minuten</li>
+                                <li>Niet oneindig voor en achteruit gaan</li>
+                            </ul>
+                            <h4>Lijst toegestane obstakels </h4>
+                            <ul>
+                                <li>Schoen</li>
+                                <li>Vuilnisbak</li>
+                                <li>...</li>
+                            </ul>
 						</div>
 					</div>
 				</div>
