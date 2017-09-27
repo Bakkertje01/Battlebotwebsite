@@ -6,6 +6,8 @@
 
 <title>Battlebot Dashboard</title>
 
+<link rel="icon" href="images/favicon.png" type="image/x-icon"/>
+
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -20,5 +22,6 @@
 
 <!-- Eigen CSS -->
 <link href="css/style.css" rel="stylesheet">
+
 <!-- Controller CSS -->
 <link href="css/controller.css" rel="stylesheet">
