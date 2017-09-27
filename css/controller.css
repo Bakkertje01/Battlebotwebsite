@@ -1,0 +1,131 @@
+#controller
+{
+    background-color: #1b6d85;
+    float: left;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.section
+{
+    background-color: #bb9925;
+    height: 230px;
+    width: 230px;
+    float: left;
+}
+
+#up
+{
+    background-color: #4b4c4d;
+    height: 50px;
+    width: 30px;
+    float: left;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    margin-top: 50px;
+}
+
+#down
+{
+    background-color: #4b4c4d;
+    height: 50px;
+    width: 30px;
+    float: left;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#left
+{
+    background-color: #4b4c4d;
+    height: 30px;
+    width: 50px;
+    float: left;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 50%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left:50px;
+}
+
+#right
+{
+    background-color: #4b4c4d;
+    height: 30px;
+    width: 50px;
+    float: left;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 5px;
+    margin-top: 100px;
+    margin-right: 50px;
+
+}
+
+#cross
+{
+    background-color: #4b4c4d;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    float: left;
+
+}
+#circle
+{
+    background-color: #4b4c4d;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    float: left;
+    margin-top:90px;
+    margin-right:40px;
+}
+#square
+{
+    background-color: #4b4c4d;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    float: left;
+    margin-left:40px;
+    margin-top:90px;
+    margin-bottom:90px;
+
+}
+#triangle
+{
+    background-color: #4b4c4d;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    float: left;
+    margin-top: 40px;
+}
+#select
+{
+    background-color: #4b4c4d;
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
+    float: left;
+    margin-top: 170px;
+    margin-left: 30px;
+}
+#start
+{
+    background-color: #4b4c4d;
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
+    float: left;
+    margin-top: 170px;
+    margin-left: 30px;
+}
