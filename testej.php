@@ -29,11 +29,12 @@ include 'include/navigation.php';
             </div>
 
             <!-- Body content-->
-            <!-- BELANGRIJK: Zorg dat alle content in een row en vervolgens in een panel wordt gezet. Zodat de stijl op elke pagina gelijk is en altijd resposive is. Kijk voor voorbeeld in de index. -->
+            <!-- BELANGRIJK: Zorg dat alle content in een row en vervolgens in een panel wordt gezet.
+            Zodat de stijl op elke pagina gelijk is en altijd resposive is. Kijk voor voorbeeld in de index. -->
             <?php
             $countid = 1;
             $dupT= 1;
-            if($dupT < 5){
+            while($dupT < 5){
             ?>
             <div class="row">
                 <div class="col-lg-6">
@@ -50,8 +51,8 @@ include 'include/navigation.php';
                                     $DBtable = "leden";
                                     mysqli_select_db($connection,$DBname);
                                     echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
-                                    ${"DBcommand".$countid} = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = '$countid'";
-                                    ${"DBresult".$countid} = mysqli_query($connection,${"DBcommand".$countid});
+                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = '$countid'";
+                                    ${"DBresult".$countid} = mysqli_query($connection,$DBcommand);
                                     echo(${"DBresult".$countid} === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
                                     $TH = array("Naam","Achternaam","Groepsfunctie");
                                     $X = 0;
@@ -62,24 +63,26 @@ include 'include/navigation.php';
                                         $X++;
                                     }
                                     echo "</tr>";
-                                    $w = 0;
-                                    while(${"row".$countid} = mysqli_fetch_row(${"DBresult".$countid})){
+
+
+                                    while($row = mysqli_fetch_assoc(${"DBresult".$countid})){
                                         echo "<tr>";
-                                        echo "<td>".${"row".$countid}["$w"]."</td>";
-                                        $w++;
-                                        echo "<td>".${"row".$countid}["$w"]."</td>";
-                                        $w++;
-                                        echo "<td>".${"row".$countid}["$w"]."</td>";
+                                        echo "<td>".$row["Naam"]."</td>";
+                                        echo "<td>".$row["Achternaam"]."</td>";
+                                        echo "<td>".$row["Groepsfunctie"]."</td>";
                                         echo "<tr>";
-                                        $w = 0 ;
                                     }
+
                                     $countid++;
                                     $dupT++;
-                                    $X = 0;
-                                    //$w = 0;
+
+                                    //mysqli_data_seek(${"DBresult".$countid}, 0);
                                     echo "</table>";
                                     echo "<br><br>";
-                                    }
+
+
+
+
                                     ?>
                                 </table>
                             </div>
@@ -88,9 +91,12 @@ include 'include/navigation.php';
                     </div>
                 </div>
             </div>
+            <?php } ?>
+        </div>
 
 
             </div>
+
 
             <!-- HIER EINDIGD DE CONTENT -->
 
@@ -100,7 +106,7 @@ include 'include/navigation.php';
     </div>
     <!-- /#page-wrapper -->
 
-</div>
+
 <!-- /#wrapper -->
 
 <!-- jQuery -->
