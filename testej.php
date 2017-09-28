@@ -28,6 +28,7 @@ include 'include/navigation.php';
                 </div>
             </div>
 
+
             <!-- Body content-->
             <!-- BELANGRIJK: Zorg dat alle content in een row en vervolgens in een panel wordt gezet.
             Zodat de stijl op elke pagina gelijk is en altijd resposive is. Kijk voor voorbeeld in de index. -->
@@ -36,7 +37,7 @@ include 'include/navigation.php';
             $dupT= 1;
             while($dupT < 5){
             ?>
-            <div class="row">
+
                 <div class="col-lg-6">
                     <div class="panel panel-warning">
                         <div class="panel-heading">
@@ -88,7 +89,7 @@ include 'include/navigation.php';
                             </div>
 
                         </div>
-                    </div>
+
                 </div>
             </div>
             <?php } ?>
