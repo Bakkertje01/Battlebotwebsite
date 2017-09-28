@@ -50,9 +50,9 @@ include 'include/navigation.php';
                                     $DBtable = "leden";
                                     mysqli_select_db($connection,$DBname);
                                     echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
-                                    ${"DBcommand".$countid} = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = $countid";
-                                    ${"DBresult".$countid} = mysqli_query($connection,$DBcommand);
-                                    echo($DBresult{$countid} === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
+                                    ${"DBcommand".$countid} = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = '$countid'";
+                                    ${"DBresult".$countid} = mysqli_query($connection,${"DBcommand".$countid});
+                                    echo(${"DBresult".$countid} === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
                                     $TH = array("Naam","Achternaam","Groepsfunctie");
                                     $X = 0;
                                     $count = count($TH);
@@ -63,7 +63,7 @@ include 'include/navigation.php';
                                         $X++;
                                     }
                                     echo "</tr>";
-                                    while(${"row".$countid} = mysqli_fetch_assoc($DBresult)){
+                                    while(${"row".$countid} = mysqli_fetch_assoc(${"DBresult".$countid})){
                                         echo "<tr>";
                                         echo "<td>".${"row".$countid}["Naam"]."</td>";
                                         echo "<td>".${"row".$countid}["Achternaam"]."</td>";
@@ -75,7 +75,6 @@ include 'include/navigation.php';
                                     $X = 0;
                                     echo "</table>";
                                     echo "<br><br>";
-
                                     }
                                     ?>
                                 </table>
