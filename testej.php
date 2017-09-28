@@ -30,9 +30,11 @@ include 'include/navigation.php';
 
             <!-- Body content-->
             <!-- BELANGRIJK: Zorg dat alle content in een row en vervolgens in een panel wordt gezet. Zodat de stijl op elke pagina gelijk is en altijd resposive is. Kijk voor voorbeeld in de index. -->
+            <?php
             $countid = 1;
             $dupT= 1;
             if($dupT < 4){
+            ?>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="panel panel-warning">
@@ -48,8 +50,8 @@ include 'include/navigation.php';
                                     $DBtable = "leden";
                                     mysqli_select_db($connection,$DBname);
                                     echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
-                                    $DBcommand{$countid} = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = $countid";
-                                    $DBresult{$countid} = mysqli_query($connection,$DBcommand);
+                                    ${"DBcommand".$countid} = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = $countid";
+                                    ${"DBresult".$countid} = mysqli_query($connection,$DBcommand);
                                     echo($DBresult{$countid} === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
                                     $TH = array("Naam","Achternaam","Groepsfunctie");
                                     $X = 0;
@@ -61,15 +63,16 @@ include 'include/navigation.php';
                                         $X++;
                                     }
                                     echo "</tr>";
-                                    while($row{$countid} = mysqli_fetch_assoc($DBresult)){
+                                    while(${"row".$countid} = mysqli_fetch_assoc($DBresult)){
                                         echo "<tr>";
-                                        echo "<td>".$row{$countid}["Naam"]."</td>";
-                                        echo "<td>".$row{$countid}["Achternaam"]."</td>";
-                                        echo "<td>".$row{$countid}["Groepsfunctie"]."</td>";
+                                        echo "<td>".${"row".$countid}["Naam"]."</td>";
+                                        echo "<td>".${"row".$countid}["Achternaam"]."</td>";
+                                        echo "<td>".${"row".$countid}["Groepsfunctie"]."</td>";
                                         echo "<tr>";
                                     }
                                     $countid++;
                                     $dupT++;
+                                    $X = 0;
                                     echo "</table>";
                                     echo "<br><br>";
 
