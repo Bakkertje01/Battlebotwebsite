@@ -80,6 +80,7 @@ include 'include/navigation.php';
                     </div>
                 </div>
 
+                <div class="row">
                 <div class="col-lg-6">
                     <div class="panel panel-warning">
                         <div class="panel-heading">
@@ -126,7 +127,7 @@ include 'include/navigation.php';
                         </div>
                     </div>
                 </div>
-
+                </div>
 
             </div>
 
@@ -176,6 +177,8 @@ include 'include/navigation.php';
                     </div>
                 </div>
 
+
+                <div class="row">
                 <div class="col-lg-6">
                     <div class="panel panel-warning">
                         <div class="panel-heading">
@@ -221,7 +224,7 @@ include 'include/navigation.php';
                         </div>
                     </div>
                 </div>
-
+                </div>
 
             </div>
 
