@@ -56,6 +56,10 @@
             <li>
                 <a href="controller.php"><i class="fa fa-fw fa-newspaper-o"></i> Besturing</a>
             </li>
+
+            <li>
+                <a href="signUp.php"><i class="fa fa-fw fa-newspaper-o"></i> Registreer voor test</a>
+            </li>
             <!--
 					<li>
 						<a href="tables.html"><i class="fa fa-fw fa-newspaper-o"></i> Onderwerp</a>
