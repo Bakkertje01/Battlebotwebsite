@@ -49,7 +49,7 @@ include 'include/navigation.php';
                                     $DBtable = "leden";
                                     mysqli_select_db($connection,$DBname);
                                     echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
-                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = $y";
+                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = 1";
                                     $DBresult = mysqli_query($connection,$DBcommand);
                                     echo($DBresult === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
                                     $TH = array("Naam","Achternaam","Groepsfunctie");
@@ -90,33 +90,35 @@ include 'include/navigation.php';
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover ">
                                     <?php
+                                    $countid = 2;
+                                    if($countid < 4){
                                     $DBname = "battlebot";
                                     $DBtable = "leden";
-                                    mysqli_select_db($connection,$DBname);
-                                    echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
-                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = 2";
-                                    $DBresult = mysqli_query($connection,$DBcommand);
-                                    echo($DBresult === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
-                                    $TH = array("Naam","Achternaam","Groepsfunctie");
+                                    mysqli_select_db($connection, $DBname);
+                                    echo (!mysqli_select_db($connection, $DBname)) ? "COULD NOT SELECT DATABASE" : NULL;
+                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = $countid";
+                                    $DBresult = mysqli_query($connection, $DBcommand);
+                                    echo ($DBresult === false) ? "COULD NOT EXECUTE STATEMENT 1" : NULL;
+                                    $TH = array("Naam", "Achternaam", "Groepsfunctie");
                                     $X = 0;
                                     $count = count($TH);
                                     //echo "<table class='table table-hover table-striped table-bordered'>";
                                     echo "<tr class='info'>";
-                                    while($X < $count ){
-                                        echo "<th>".$TH[$X]."</th>";
+                                    while ($X < $count) {
+                                        echo "<th>" . $TH[$X] . "</th>";
                                         $X++;
                                     }
                                     echo "</tr>";
-                                    while($row = mysqli_fetch_assoc($DBresult)){
+                                    while ($row = mysqli_fetch_assoc($DBresult)) {
                                         echo "<tr>";
-                                        echo "<td>".$row["Naam"]."</td>";
-                                        echo "<td>".$row["Achternaam"]."</td>";
-                                        echo "<td>".$row["Groepsfunctie"]."</td>";
+                                        echo "<td>" . $row["Naam"] . "</td>";
+                                        echo "<td>" . $row["Achternaam"] . "</td>";
+                                        echo "<td>" . $row["Groepsfunctie"] . "</td>";
                                         echo "<tr>";
                                     }
                                     echo "</table>";
                                     echo "<br><br>";
-
+                                    $countid++;
                                     ?>
                                 </table>
                             </div>
@@ -141,31 +143,31 @@ include 'include/navigation.php';
                                     <?php
                                     $DBname = "battlebot";
                                     $DBtable = "leden";
-                                    mysqli_select_db($connection,$DBname);
-                                    echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
-                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = 3";
-                                    $DBresult = mysqli_query($connection,$DBcommand);
-                                    echo($DBresult === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
-                                    $TH = array("Naam","Achternaam","Groepsfunctie");
+                                    mysqli_select_db($connection, $DBname);
+                                    echo (!mysqli_select_db($connection, $DBname)) ? "COULD NOT SELECT DATABASE" : NULL;
+                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = $countid";
+                                    $DBresult = mysqli_query($connection, $DBcommand);
+                                    echo ($DBresult === false) ? "COULD NOT EXECUTE STATEMENT 1" : NULL;
+                                    $TH = array("Naam", "Achternaam", "Groepsfunctie");
                                     $X = 0;
                                     $count = count($TH);
                                     //echo "<table class='table table-hover table-striped table-bordered'>";
                                     echo "<tr class='info'>";
-                                    while($X < $count ){
-                                        echo "<th>".$TH[$X]."</th>";
+                                    while ($X < $count) {
+                                        echo "<th>" . $TH[$X] . "</th>";
                                         $X++;
                                     }
                                     echo "</tr>";
-                                    while($row = mysqli_fetch_assoc($DBresult)){
+                                    while ($row = mysqli_fetch_assoc($DBresult)) {
                                         echo "<tr>";
-                                        echo "<td>".$row["Naam"]."</td>";
-                                        echo "<td>".$row["Achternaam"]."</td>";
-                                        echo "<td>".$row["Groepsfunctie"]."</td>";
+                                        echo "<td>" . $row["Naam"] . "</td>";
+                                        echo "<td>" . $row["Achternaam"] . "</td>";
+                                        echo "<td>" . $row["Groepsfunctie"] . "</td>";
                                         echo "<tr>";
                                     }
                                     echo "</table>";
                                     echo "<br><br>";
-
+                                    $countid++;
                                     ?>
                                 </table>
                             </div>
@@ -186,31 +188,32 @@ include 'include/navigation.php';
                                     <?php
                                     $DBname = "battlebot";
                                     $DBtable = "leden";
-                                    mysqli_select_db($connection,$DBname);
-                                    echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
-                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = 4";
-                                    $DBresult = mysqli_query($connection,$DBcommand);
-                                    echo($DBresult === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
-                                    $TH = array("Naam","Achternaam","Groepsfunctie");
+                                    mysqli_select_db($connection, $DBname);
+                                    echo (!mysqli_select_db($connection, $DBname)) ? "COULD NOT SELECT DATABASE" : NULL;
+                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = $countid";
+                                    $DBresult = mysqli_query($connection, $DBcommand);
+                                    echo ($DBresult === false) ? "COULD NOT EXECUTE STATEMENT 1" : NULL;
+                                    $TH = array("Naam", "Achternaam", "Groepsfunctie");
                                     $X = 0;
                                     $count = count($TH);
                                     //echo "<table class='table table-hover table-striped table-bordered'>";
                                     echo "<tr class='info'>";
-                                    while($X < $count ){
-                                        echo "<th>".$TH[$X]."</th>";
+                                    while ($X < $count) {
+                                        echo "<th>" . $TH[$X] . "</th>";
                                         $X++;
                                     }
                                     echo "</tr>";
-                                    while($row = mysqli_fetch_assoc($DBresult)){
+                                    while ($row = mysqli_fetch_assoc($DBresult)) {
                                         echo "<tr>";
-                                        echo "<td>".$row["Naam"]."</td>";
-                                        echo "<td>".$row["Achternaam"]."</td>";
-                                        echo "<td>".$row["Groepsfunctie"]."</td>";
+                                        echo "<td>" . $row["Naam"] . "</td>";
+                                        echo "<td>" . $row["Achternaam"] . "</td>";
+                                        echo "<td>" . $row["Groepsfunctie"] . "</td>";
                                         echo "<tr>";
                                     }
                                     echo "</table>";
                                     echo "<br><br>";
-
+                                    $countid++;
+                                    }
                                     ?>
                                 </table>
                             </div>
