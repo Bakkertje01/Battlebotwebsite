@@ -33,7 +33,7 @@ include 'include/navigation.php';
             <?php
             $countid = 1;
             $dupT= 1;
-            if($dupT < 4){
+            if($dupT < 5){
             ?>
             <div class="row">
                 <div class="col-lg-6">
