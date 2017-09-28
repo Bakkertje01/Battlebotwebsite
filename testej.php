@@ -1,13 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Ernst-Jan
- * Date: 22-9-2017
- * Time: 09:52
- */
-include_once "include/db_connection.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +5,7 @@ include_once "include/db_connection.php";
 
     <?php
     include 'include/head.php';
+    include_once "include/db_connection.php";
     ?>
 
 </head>
@@ -31,8 +22,8 @@ include 'include/navigation.php';
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Standen wedstrijd
-                        <small>Hallo</small>
+                        Battlebot teams
+                        <small>Teamindeling</small>
                     </h1>
                 </div>
             </div>
@@ -40,28 +31,70 @@ include 'include/navigation.php';
             <!-- Body content-->
             <!-- BELANGRIJK: Zorg dat alle content in een row en vervolgens in een panel wordt gezet. Zodat de stijl op elke pagina gelijk is en altijd resposive is. Kijk voor voorbeeld in de index. -->
 
-
             <div class="row">
-                <div class="col-lg-12">
+
+
+
+                <div class="col-lg-6">
                     <div class="panel panel-warning">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Voorbeeld panel met hele breedte</h3>
+                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> TEAM: INF1F1A</h3>
                         </div>
                         <div class="panel-body">
                             <!--Content body hier! -->
-                            <p> <h2>test</h2></p>
-
-
-                            <div id="wrapper">
-                                <div id='content'>
-
-
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover ">
                                     <?php
                                     $DBname = "battlebot";
                                     $DBtable = "leden";
                                     mysqli_select_db($connection,$DBname);
                                     echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
-                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = 1";
+                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = $y";
+                                    $DBresult = mysqli_query($connection,$DBcommand);
+                                    echo($DBresult === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
+                                    $TH = array("Naam","Achternaam","Groepsfunctie");
+                                    $X = 0;
+                                    $count = count($TH);
+
+                                    echo "<tr class='info'>";
+                                    while($X < $count ){
+                                        echo "<th>".$TH[$X]."</th>";
+                                        $X++;
+                                    }
+                                    echo "</tr>";
+                                    while($row = mysqli_fetch_assoc($DBresult)){
+                                        echo "<tr>";
+                                        echo "<td>".$row["Naam"]."</td>";
+                                        echo "<td>".$row["Achternaam"]."</td>";
+                                        echo "<td>".$row["Groepsfunctie"]."</td>";
+                                        echo "<tr>";
+                                    }
+                                    echo "</table>";
+                                    echo "<br><br>";
+
+                                    ?>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> TEAM: INF1F1B</h3>
+                        </div>
+                        <div class="panel-body">
+                            <!--Content body hier! -->
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover ">
+                                    <?php
+                                    $DBname = "battlebot";
+                                    $DBtable = "leden";
+                                    mysqli_select_db($connection,$DBname);
+                                    echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
+                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = 2";
                                     $DBresult = mysqli_query($connection,$DBcommand);
                                     echo($DBresult === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
                                     $TH = array("Naam","Achternaam","Groepsfunctie");
@@ -85,25 +118,57 @@ include 'include/navigation.php';
                                     echo "<br><br>";
 
                                     ?>
-
-
-                                </div>
-
-
+                                </table>
                             </div>
+
+                        </div>
                     </div>
                 </div>
+
+
             </div>
 
             <div class="row">
                 <div class="col-lg-6">
                     <div class="panel panel-warning">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Voorbeeld panel met halve breedte</h3>
+                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> TEAM: INF1F2A</h3>
                         </div>
                         <div class="panel-body">
                             <!--Content body hier! -->
-                            <p>Halve breedte. Zet hier de content in die de pagina moet weergeven.</p>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover ">
+                                    <?php
+                                    $DBname = "battlebot";
+                                    $DBtable = "leden";
+                                    mysqli_select_db($connection,$DBname);
+                                    echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
+                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = 3";
+                                    $DBresult = mysqli_query($connection,$DBcommand);
+                                    echo($DBresult === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
+                                    $TH = array("Naam","Achternaam","Groepsfunctie");
+                                    $X = 0;
+                                    $count = count($TH);
+                                    //echo "<table class='table table-hover table-striped table-bordered'>";
+                                    echo "<tr class='info'>";
+                                    while($X < $count ){
+                                        echo "<th>".$TH[$X]."</th>";
+                                        $X++;
+                                    }
+                                    echo "</tr>";
+                                    while($row = mysqli_fetch_assoc($DBresult)){
+                                        echo "<tr>";
+                                        echo "<td>".$row["Naam"]."</td>";
+                                        echo "<td>".$row["Achternaam"]."</td>";
+                                        echo "<td>".$row["Groepsfunctie"]."</td>";
+                                        echo "<tr>";
+                                    }
+                                    echo "</table>";
+                                    echo "<br><br>";
+
+                                    ?>
+                                </table>
+                            </div>
 
                         </div>
                     </div>
@@ -112,15 +177,49 @@ include 'include/navigation.php';
                 <div class="col-lg-6">
                     <div class="panel panel-warning">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Voorbeeld panel met halve breedte</h3>
+                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> TEAM: INF1F2B</h3>
                         </div>
                         <div class="panel-body">
                             <!--Content body hier! -->
-                            <p>Halve breedte. Zet hier de content in die de pagina moet weergeven.</p>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover ">
+                                    <?php
+                                    $DBname = "battlebot";
+                                    $DBtable = "leden";
+                                    mysqli_select_db($connection,$DBname);
+                                    echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
+                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = 4";
+                                    $DBresult = mysqli_query($connection,$DBcommand);
+                                    echo($DBresult === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
+                                    $TH = array("Naam","Achternaam","Groepsfunctie");
+                                    $X = 0;
+                                    $count = count($TH);
+                                    //echo "<table class='table table-hover table-striped table-bordered'>";
+                                    echo "<tr class='info'>";
+                                    while($X < $count ){
+                                        echo "<th>".$TH[$X]."</th>";
+                                        $X++;
+                                    }
+                                    echo "</tr>";
+                                    while($row = mysqli_fetch_assoc($DBresult)){
+                                        echo "<tr>";
+                                        echo "<td>".$row["Naam"]."</td>";
+                                        echo "<td>".$row["Achternaam"]."</td>";
+                                        echo "<td>".$row["Groepsfunctie"]."</td>";
+                                        echo "<tr>";
+                                    }
+                                    echo "</table>";
+                                    echo "<br><br>";
+
+                                    ?>
+                                </table>
+                            </div>
 
                         </div>
                     </div>
                 </div>
+
+
             </div>
 
             <!-- HIER EINDIGD DE CONTENT -->

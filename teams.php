@@ -52,7 +52,7 @@ include 'include/navigation.php';
                                     $TH = array("Naam","Achternaam","Groepsfunctie");
                                     $X = 0;
                                     $count = count($TH);
-                                    //echo "<table class='table table-hover table-striped table-bordered'>";
+
                                     echo "<tr class='info'>";
                                     while($X < $count ){
                                         echo "<th>".$TH[$X]."</th>";
