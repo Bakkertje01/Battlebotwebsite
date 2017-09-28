@@ -56,7 +56,6 @@ include 'include/navigation.php';
                                     $TH = array("Naam","Achternaam","Groepsfunctie");
                                     $X = 0;
                                     $count = count($TH);
-
                                     echo "<tr class='info'>";
                                     while($X < $count ){
                                         echo "<th>".$TH[$X]."</th>";
