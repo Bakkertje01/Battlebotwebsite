@@ -62,16 +62,21 @@ include 'include/navigation.php';
                                         $X++;
                                     }
                                     echo "</tr>";
-                                    while(${"row".$countid} = mysqli_fetch_assoc(${"DBresult".$countid})){
+                                    $w = 0;
+                                    while(${"row".$countid} = mysqli_fetch_row(${"DBresult".$countid})){
                                         echo "<tr>";
-                                        echo "<td>".${"row".$countid}["Naam"]."</td>";
-                                        echo "<td>".${"row".$countid}["Achternaam"]."</td>";
-                                        echo "<td>".${"row".$countid}["Groepsfunctie"]."</td>";
+                                        echo "<td>".${"row".$countid}["$w"]."</td>";
+                                        $w++;
+                                        echo "<td>".${"row".$countid}["$w"]."</td>";
+                                        $w++;
+                                        echo "<td>".${"row".$countid}["$w"]."</td>";
                                         echo "<tr>";
+                                        $w = 0 ;
                                     }
                                     $countid++;
                                     $dupT++;
                                     $X = 0;
+                                    //$w = 0;
                                     echo "</table>";
                                     echo "<br><br>";
                                     }
