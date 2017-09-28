@@ -15,6 +15,6 @@ if (mysqli_connect_errno()) {
     );
 }
 else {
-    //echo "connected";
+    //echo "<h1>connected</h1>";
 }
 ?>

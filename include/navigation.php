@@ -14,7 +14,16 @@
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
         <li class="dropdown">
-            <a href="login.php"><i class="fa fa-user"></i> Login</a>
+            <?php
+
+            if (isset($_SESSION['User_ID'])) {
+                echo '<a href="logout.php"><i class="fa fa-user"></i> Logout</a>';
+            } else {
+                echo '<a href="login.php"><i class="fa fa-user"></i> Login</a>';
+            }
+
+            ?>
+
         </li>
     </ul>
 

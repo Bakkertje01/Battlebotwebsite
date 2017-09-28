@@ -1,4 +1,7 @@
-
+<?php
+include "include/session.php";
+include 'include/db_connection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +12,6 @@
 
         <?php
         include 'include/head.php';
-        include 'include/db_connection.php';
-
         ?>
 
     </head>
@@ -20,7 +21,6 @@
 
 <?php
 
-
 if(isset($_POST['submit'])){
     $username = trim($_POST['username']);
     $username = strip_tags($username);
@@ -29,35 +29,33 @@ if(isset($_POST['submit'])){
     $pass = strip_tags($pass);
     $pass = htmlspecialchars($pass);
 
-
-    $result = mysqli_query($DBConnect, "SELECT * FROM user WHERE userName='$username' LIMIT 1")
-    OR DIE ('error: '. mysqli_error($DBConnect));
+    $result = mysqli_query($connection, "SELECT * FROM user WHERE Gebruikersnaam='$username' LIMIT 1")
+    OR DIE ('error: '. mysqli_error($connection));
 
     $row = mysqli_fetch_array($result);
-    if (is_array($row) && password_verify($pass, $row['userPass']) ) {
+    if (is_array($row) && password_verify($pass, $row['Wachtwoord']) ) {
 
-        $_SESSION["userID"] = $row['userID'];
-        $_SESSION["userName"] = $row['userName'];
+        $_SESSION["User_ID"] = $row['User_ID'];
+        $_SESSION["Gebruikersnaam"] = $row['Gebruikersnaam'];
 
         $header = true;
         if($header === true) {
 
-            header("refresh:5;index.php");
-            $message = "U bent ingelod en wordt doorverwezen";
-            echo '</h1>' . $message . '</h1>';
+            header("refresh:1;index.php");
+            $message = '<br><div class="alert alert-success" role="alert"> U bent ingelod en wordt doorverwezen</div>';
 
         }
 
     } else {
-        $message = "Invalid Username or Password!";
-        echo '</h1>' . $message . '</h1>';
-    }
 
-    echo '<h1>' . $_POST["username"] . '</h1>';
+        $message = '<br><div class="alert alert-danger" role="alert">Gebruikersnaam of wachtwoord niet geldig. Probeer opnieuw in te loggen.</div>' ;
+
+    }
 }
 
 
 ?>
+
 
 <div class="container">
 
@@ -70,7 +68,7 @@ if(isset($_POST['submit'])){
                 <div class="panel-body">
 
             <form class="form-signin" method="POST">
-                <h2 class="form-signin-heading">Please sign in</h2>
+                <h2 class="form-signin-heading">Log hier in</h2>
 
                 <label for="usernameInput" class="text-left">Gebruikersnaam</label>
                 <input type="text" id="usernameInput" class="form-control" placeholder="Gebruikersnaam" name="username" required>
@@ -78,8 +76,16 @@ if(isset($_POST['submit'])){
                 <label for="passwordInput">Wachtwoord</label>
                 <input type="password" id="passwordInput" class="form-control" placeholder="Wachtwoord" name="password" required>
                 <br>
-                <button class="btn btn-outline-warning" type="submit" name="submit">Sign in</button>
+                <button class="btn btn-outline-warning" type="submit" name="submit">Login</button>
             </form>
+
+                    <?php
+
+                    if(isset($message)){
+                        echo $message;
+                    }
+
+                    ?>
         </div>
     </div>
     </div>

@@ -1,3 +1,7 @@
+<?php
+include "include/session.php";
+include 'include/db_connection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,11 +22,19 @@
     <div id="page-wrapper">
         <div class="container-fluid">
 
+
             <!-- Page Heading -->
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
                         Welkom
+                        <?php
+
+                        if (isset($_SESSION['User_ID'])) {
+                            echo  ucfirst($_SESSION['Gebruikersnaam']);
+                        }
+
+                        ?>
                         <small>Battlebot competitie overzicht</small>
                     </h1>
                 </div>
