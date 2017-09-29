@@ -18,6 +18,7 @@
 
             if (isset($_SESSION['User_ID'])) {
                 echo '<a href="logout.php"><i class="fa fa-user"></i> Logout</a>';
+
             } else {
                 echo '<a href="login.php"><i class="fa fa-user"></i> Login</a>';
             }
@@ -60,6 +61,55 @@
             <li>
                 <a href="signUp.php"><i class="fa fa-fw fa-newspaper-o"></i> Registreer voor test</a>
             </li>
+
+            <?php
+
+            if (isset($_SESSION['User_ID'])) {
+                $query = "SELECT Websitefunctie FROM user WHERE User_ID = " . $_SESSION['User_ID'];
+                $result = mysqli_query($connection, $query);
+                $row = mysqli_fetch_assoc($result);
+                if (!empty($result)) {
+
+                    $functie = $row["Websitefunctie"];;
+
+                    switch ($functie) {
+                        case "Camera":
+                            echo '<li>
+                                <a href="camera.php"><i class="fa fa-fw fa-newspaper-o"></i> Camera Besturen</a>
+                             </li>';
+                            break;
+                        case "Jury":
+                            echo '<li>
+                                <a href="punten.php"><i class="fa fa-fw fa-newspaper-o"></i> Punten Doorvoeren</a>
+                             </li>';
+                            break;
+                        case "Team":
+                            echo '<li>
+                                <a href="controller.php"><i class="fa fa-fw fa-newspaper-o"></i> Battlebot Besturen</a>
+                             </li>';
+                            break;
+                        case "Admin":
+                            echo '<li>
+                                     <a href="camera.php"><i class="fa fa-fw fa-newspaper-o"></i> Camera Besturen</a>
+                                  </li>
+                                  <li>
+                                    <a href="punten.php"><i class="fa fa-fw fa-newspaper-o"></i> Punten Doorvoeren</a>
+                                 </li>
+                                  <li>
+                                    <a href="controller.php"><i class="fa fa-fw fa-newspaper-o"></i> Battlebot Besturen</a>
+                                  </li>';
+                            break;
+                        default:
+                            echo "";
+                    }
+
+                    unset($_POST);
+
+                }
+            }
+
+            ?>
+
             <!--
 					<li>
 						<a href="tables.html"><i class="fa fa-fw fa-newspaper-o"></i> Onderwerp</a>

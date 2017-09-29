@@ -51,8 +51,6 @@ if (isset($_POST['submit'])) {
             echo "<h1>Registreren is niet gelukt! Probeer het opnieuw.</h1>";
         }
     mysqli_close($connection);
-
-        echo $username . $pass;
     }
 
 ?>
@@ -78,7 +76,13 @@ if (isset($_POST['submit'])) {
                         <input type="password" id="passwordInput" class="form-control" placeholder="Wachtwoord" name="password" required>
                         <br>
                         <label for="functie">Functie</label>
-                        <input type="text" id="functie" class="form-control" placeholder="Functie" name="functie" required>
+                        <select name="functie" id="functie" class="form-control" placeholder="Selecteer functie">
+                            <option value="" disabled selected>Selecteer een functie</option>
+                            <option value="Camera">Camera</option>
+                            <option value="Jury">Jury</option>
+                            <option value="Team">Battlebot Team</option>
+                            <option value="Admin">Admin</option>
+                        </select>
                         <br>
                         <label for="botid">Bot ID</label>
                         <input type="number" id="botid" class="form-control" placeholder="Bot ID" name="botid" required>

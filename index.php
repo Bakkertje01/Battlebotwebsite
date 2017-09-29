@@ -34,6 +34,8 @@ include 'include/db_connection.php';
                             echo  ucfirst($_SESSION['Gebruikersnaam']);
                         }
 
+
+
                         ?>
                         <small>Battlebot competitie overzicht</small>
                     </h1>
