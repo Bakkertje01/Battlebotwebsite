@@ -1,6 +1,6 @@
 <?php
 include 'include/session.php';
-include 'include/db_connection.php'
+include 'include/db_connection.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

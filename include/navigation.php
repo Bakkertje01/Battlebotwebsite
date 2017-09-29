@@ -34,7 +34,7 @@
 
 
         <ul class="nav navbar-nav side-nav">
-            <li class="active">
+            <li>
                 <a href="index.php"><i class="fa fa-fw fa-home"></i> Home</a>
             </li>
 
