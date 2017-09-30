@@ -43,19 +43,15 @@
             </li>
 
             <li>
-                <a href="wedstrijden.php"><i class="fa fa-fw fa-table"></i> Wedstrijden</a>
-            </li>
-
-            <li>
                 <a href="regels.php"><i class="fa fa-fw fa-newspaper-o"></i> Regels</a>
             </li>
 
             <li>
-                <a href="standen.php"><i class="fa fa-fw fa-newspaper-o"></i> Standen</a>
+                <a href="standen.php"><i class="fa fa-fw fa-table"></i> Standen</a>
             </li>
 
             <li>
-                <a href="controller.php"><i class="fa fa-fw fa-newspaper-o"></i> Besturing</a>
+                <a href="controller.php"><i class="fa fa-fw fa-move"></i> Besturing</a>
             </li>
 
             <li>
