@@ -47,14 +47,23 @@ include 'include/navigation.php';
                 <div class="col-lg-6">
                    <form action = "scoreboard.php" method = "POST" >
                        First place<select name = "First">
-                           // make dynamic and use loop once to fill
+                           <!-- make dynamic and use loop once to fill-->
                            <option value = "3">joe</option>
                            <option value = "2">jack</option>
                            <option value = "1">jill</option>
                        </select>
-                       disqualified <input type = "checkbox" name = "dis" value = 0>
+                       disqualified <input type = "checkbox" name = "dis" value = 0> <br>
+                       <!-- end loop here -->
+                       <input type = "submit" name = "submit" value = "submit">
 
                    </form>
+
+                    <?php
+                        if(isset($_POST["submit"])){
+
+
+                        }
+                    ?>
 
                 </div>
 
