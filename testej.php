@@ -64,8 +64,6 @@ include 'include/navigation.php';
                                         $X++;
                                     }
                                     echo "</tr>";
-
-
                                     while($row = mysqli_fetch_assoc(${"DBresult".$countid})){
                                         echo "<tr>";
                                         echo "<td>".$row["Naam"]."</td>";
