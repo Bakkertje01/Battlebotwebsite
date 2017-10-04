@@ -1,3 +1,7 @@
+<?php
+include 'include/session.php';
+include 'include/db_connection.php'
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +9,6 @@
 
     <?php
     include 'include/head.php';
-    include_once "include/db_connection.php";
     ?>
 
 </head>
@@ -22,80 +25,68 @@ include 'include/navigation.php';
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Battlebot teams
-                        <small>Teamindeling</small>
+                        Titel van pagina
+                        <small>Hallo</small>
                     </h1>
                 </div>
             </div>
 
-
             <!-- Body content-->
-            <!-- BELANGRIJK: Zorg dat alle content in een row en vervolgens in een panel wordt gezet.
-            Zodat de stijl op elke pagina gelijk is en altijd resposive is. Kijk voor voorbeeld in de index. -->
-            <?php
-            $countid = 1;
-            $dupT= 1;
-            while($dupT < 5){
-            ?>
+            <!-- BELANGRIJK: Zorg dat alle content in een row en vervolgens in een panel wordt gezet. Zodat de stijl op elke pagina gelijk is en altijd resposive is. Kijk voor voorbeeld in de index. -->
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Voorbeeld panel met hele breedte</h3>
+                        </div>
+                        <div class="panel-body">
+                            <!--Content body hier!
+                            <p> Complete breedte. Zet hier de content in die de pagina moet weergeven.</p>
+                                <img src="foscam.serverict.nl" width='' onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 1000)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' alt='' />
+                            <img alt="" src="http://foscam.serverict.nl/videostream.cgi?user=guest&pwd=">
+                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=nn&onestep=5&user=guest&pwd=" target="control">[up]</a>
+                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=2&onestep=5&user=guest&pwd=" target="control">[Down]</a>
+                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=4&onestep=5&user=guest&pwd=" target="control">[Right]</a>
+                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=6&onestep=5&user=guest&pwd=" target="control">[Left]</a>
+                            <iframe name="control" height="1" width="1"></iframe>
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Voorbeeld panel met halve breedte</h3>
+                        </div>
+                        <div class="panel-body">
+                            <!--Content body hier!
+                            <p>Halve breedte. Zet hier de content in die de pagina moet weergeven.</p>
+
+
+                            <img alt="" src="http://webcam.serverict.nl/videostream.cgi">
+-->
+                        </div>
+                    </div>
+                </div>
 
                 <div class="col-lg-6">
                     <div class="panel panel-warning">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> TEAM: INF1F1A</h3>
+                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Voorbeeld panel met halve breedte</h3>
                         </div>
                         <div class="panel-body">
                             <!--Content body hier! -->
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover ">
-                                    <?php
-                                    $DBname = "battlebot";
-                                    $DBtable = "leden";
-                                    mysqli_select_db($connection,$DBname);
-                                    echo(!mysqli_select_db($connection,$DBname))?"COULD NOT SELECT DATABASE": NULL;
-                                    $DBcommand = "SELECT * FROM $DBtable WHERE Battlebot_Battlebot_ID = '$countid'";
-                                    ${"DBresult".$countid} = mysqli_query($connection,$DBcommand);
-                                    echo(${"DBresult".$countid} === false)?"COULD NOT EXECUTE STATEMENT 1": NULL;
-                                    $TH = array("Naam","Achternaam","Groepsfunctie");
-                                    $X = 0;
-                                    $count = count($TH);
-                                    echo "<tr class='info'>";
-                                    while($X < $count ){
-                                        echo "<th>".$TH[$X]."</th>";
-                                        $X++;
-                                    }
-                                    echo "</tr>";
-                                    while($row = mysqli_fetch_assoc(${"DBresult".$countid})){
-                                        echo "<tr>";
-                                        echo "<td>".$row["Naam"]."</td>";
-                                        echo "<td>".$row["Achternaam"]."</td>";
-                                        echo "<td>".$row["Groepsfunctie"]."</td>";
-                                        echo "<tr>";
-                                    }
-
-                                    $countid++;
-                                    $dupT++;
-
-                                    //mysqli_data_seek(${"DBresult".$countid}, 0);
-                                    echo "</table>";
-                                    echo "<br><br>";
-
-
-
-
-                                    ?>
-                                </table>
-                            </div>
+                            <p>Halve breedte. Zet hier de content in die de pagina moet weergeven.</p>
 
                         </div>
-
+                    </div>
                 </div>
             </div>
-            <?php } ?>
-        </div>
-
-
-            </div>
-
 
             <!-- HIER EINDIGD DE CONTENT -->
 
@@ -105,7 +96,7 @@ include 'include/navigation.php';
     </div>
     <!-- /#page-wrapper -->
 
-
+</div>
 <!-- /#wrapper -->
 
 <!-- jQuery -->

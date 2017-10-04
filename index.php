@@ -53,7 +53,7 @@ include 'include/db_connection.php';
                         <div class="panel-body">
                             <!--Content body hier! -->
                             <p>Hier word de statische camera weergegeven. </p>
-                            <img src="images/camera.jpg" class="img-responsive" alt="camera" />
+                            <img alt="" src="http://webcam.serverict.nl/videostream.cgi">
 
                         </div>
                     </div>
@@ -67,8 +67,17 @@ include 'include/db_connection.php';
                         <div class="panel-body">
                             <!--Content body hier! -->
                             <p> Hier wordt de dome camera weergegeven. </p>
-                            <img src="images/camera.jpg" class="img-responsive" alt="camera" />
+                            <img alt="" src="http://foscam.serverict.nl/videostream.cgi?user=guest&pwd=">
 
+                            <div></div>
+
+                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=nn&onestep=5&user=guest&pwd=" target="control">[up]</a>
+                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=2&onestep=5&user=guest&pwd=" target="control">[Down]</a>
+                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=4&onestep=5&user=guest&pwd=" target="control">[Right]</a>
+                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=6&onestep=5&user=guest&pwd=" target="control">[Left]</a>
+                            <iframe name="control" height="1" width="1"></iframe>
+                            <!--<img src="images/camera.jpg" class="img-responsive" alt="camera" />-->
+                        </div>
                         </div>
                     </div>
                 </div>
