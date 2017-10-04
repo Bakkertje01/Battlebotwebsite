@@ -51,7 +51,7 @@
             </li>
 
             <li>
-                <a href="controller.php"><i class="fa fa-fw fa-move"></i> Besturing</a>
+                <a href="controller.php"><i class="fa fa-fw fa-gamepad"></i> Besturing</a>
             </li>
 
             <li>
@@ -92,7 +92,7 @@
                                     <a href="punten.php"><i class="fa fa-fw fa-newspaper-o"></i> Punten Doorvoeren</a>
                                  </li>
                                   <li>
-                                    <a href="controller.php"><i class="fa fa-fw fa-newspaper-o"></i> Battlebot Besturen</a>
+                                    <a href="controller.php"><i class="fa fa-fw fa-gamepad"></i> Battlebot Besturen</a>
                                   </li>';
                             break;
                         default:
