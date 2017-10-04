@@ -28,17 +28,7 @@ include 'include/navigation.php';
                     </h1>
                 </div>
             </div>
-            <?php
-            $DBname = "battlebot";
-            $DBtable = "spel";
-                $selectDB = mysqli_select_db($connection,$DBname);
-                echo( $selectDB === false)? "DB could not connect": NULL;
-                $DBcommand = "SELECT * FROM $DBtable ";
-                $DBresult = mysqli_query($connection, $DBcommand);
-                echo( $DBresult === false)? "query could not be executed": NULL;
 
-
-            ?>
 
             <!-- Body content-->
             <!-- BELANGRIJK: Zorg dat alle content in een row en vervolgens in een panel wordt gezet.
@@ -46,13 +36,42 @@ include 'include/navigation.php';
 
                 <div class="col-lg-6">
                    <form action = "scoreboard.php" method = "POST" >
-                       First place<select name = "First">
-                           <!-- make dynamic and use loop once to fill-->
-                           <option value = "3">joe</option>
-                           <option value = "2">jack</option>
-                           <option value = "1">jill</option>
-                       </select>
-                       disqualified <input type = "checkbox" name = "dis" value = 0> <br>
+                       <?php
+                       $x = 0;
+                       $Cid = 1;
+                       $punt = 4;
+                       while($Cid < 5){
+                           $DBname = "battlebot";
+                           $DBtable = "battlebot";
+                           $selectDB = mysqli_select_db($connection,$DBname);
+                           echo( $selectDB === false)? "DB could not connect": NULL;
+                           $DBcommand = "SELECT * FROM $DBtable ";
+                           ${"DBresult".$Cid} = mysqli_query($connection, $DBcommand);
+                           echo( ${"DBresult".$Cid} === false)? "query could not be executed": NULL;
+
+                           $place = array("First","Second","Third","Fourth"); // make multidimens
+
+
+
+                               echo "$place[$x]<select name = '$place[$x]'>";
+
+                               //echo "<option value = 3 > joe </option>";
+                                       while($row = mysqli_fetch_assoc(${"DBresult".$Cid})) {
+                                           //change value
+                                           echo "<option value = $punt >".$row['Botnaam']."</option>";
+
+                                       }
+
+
+                                echo "</select>";
+                                //name of check is numbered 1 to 4 example: dis1
+                                echo "disqualified <input type = 'checkbox' name = 'dis".$Cid."' value = 0> <br>";
+                                $Cid++;
+                                $x++;
+                                $punt++;
+                               }
+                       ?>
+
                        <!-- end loop here -->
                        <input type = "submit" name = "submit" value = "submit">
 
