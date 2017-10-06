@@ -146,24 +146,39 @@ include 'include/db_connection.php';
                                     <tr>
                                         <th>Team</th>
                                         <td>INF1F1A</td>
+                                        <td>INF1F1B</td>
+                                        <td>INF1F2A</td>
+                                        <td>INF1F2B</td>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
                                         <th>Snelheid</th>
                                         <td>2.1 km/h</td>
+                                        <td>4.2 km/h</td>
+                                        <td>3.9 km/h</td>
+                                        <td>5.1 km/h</td>
                                     </tr>
                                     <tr>
                                         <th>Afstand</th>
+                                        <td>30 meter</td>
+                                        <td>30 meter</td>
+                                        <td>30 meter</td>
                                         <td>30 meter</td>
                                     </tr>
                                     <tr>
                                         <th>Display text</th>
                                         <td>Aan</td>
+                                        <td>Aan</td>
+                                        <td>Aan</td>
+                                        <td>Aan</td>
                                     </tr>
                                     <tr>
-                                        <th>Nog iets?</th>
-                                        <td>Vast wel</td>
+                                        <th>Rijtijd</th>
+                                        <td>5.41</td>
+                                        <td>7.21</td>
+                                        <td>3.53</td>
+                                        <td>6.50</td>
                                     </tr>
                                     </tbody>
                                 </table>
