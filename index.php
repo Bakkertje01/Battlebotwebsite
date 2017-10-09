@@ -71,10 +71,14 @@ include 'include/db_connection.php';
 
                             <div></div>
 
-                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=nn&onestep=5&user=guest&pwd=" target="control">[up]</a>
-                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=2&onestep=5&user=guest&pwd=" target="control">[Down]</a>
-                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=4&onestep=5&user=guest&pwd=" target="control">[Right]</a>
-                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=6&onestep=5&user=guest&pwd=" target="control">[Left]</a>
+                            <div class="section"">
+                                <a href="http://foscam.serverict.nl/decoder_control.cgi?command=6&onestep=5&user=guest&pwd=" target="control"><button id="left"></button></a>
+                                <a href="http://foscam.serverict.nl/decoder_control.cgi?command=nn&onestep=5&user=guest&pwd=" target="control"><button id="up"></button></a>
+                                <a href="http://foscam.serverict.nl/decoder_control.cgi?command=4&onestep=5&user=guest&pwd=" target="control"><button id="right"></button></a>
+                                <a href="http://foscam.serverict.nl/decoder_control.cgi?command=2&onestep=5&user=guest&pwd=" target="control"><button id="down"></button></a>
+                            </div>
+                        </div>
+
                             <iframe name="control" height="1" width="1"></iframe>
                             <!--<img src="images/camera.jpg" class="img-responsive" alt="camera" />-->
                         </div>
