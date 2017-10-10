@@ -57,6 +57,9 @@
             <li>
                 <a href="signUp.php"><i class="fa fa-fw fa-newspaper-o"></i> Registreer voor test</a>
             </li>
+            <li>
+                <a href="log.php"><i class="fa fa-fw fa-newspaper-o"></i> Logbestand</a>
+            </li>
 
             <?php
 
@@ -93,6 +96,9 @@
                                  </li>
                                   <li>
                                     <a href="controller.php"><i class="fa fa-fw fa-gamepad"></i> Battlebot Besturen</a>
+                                  </li>
+                                  <li>
+                                    <a href="log.php"><i class="fa fa-fw fa-gamepad"></i> Logbestand</a>
                                   </li>';
                             break;
                         default:
