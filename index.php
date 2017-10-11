@@ -67,7 +67,7 @@ include 'include/db_connection.php';
                         <div class="panel-body">
                             <!--Content body hier! -->
                             <p> Hier wordt de dome camera weergegeven. </p>
-                            <img alt="" src="http://foscam.serverict.nl/videostream.cgi?user=guest&pwd=">
+                            <img class="image-responsive" alt="" src="http://foscam.serverict.nl/videostream.cgi?user=guest&pwd=">
 
                             <div></div>
 
