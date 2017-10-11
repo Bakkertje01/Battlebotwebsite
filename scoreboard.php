@@ -53,7 +53,7 @@ include 'include/navigation.php';
 
 
                                 echo "$place[$x]<select name = '$place[$x]'>";
-                                echo "<option value = '' ></option>";
+                                echo "<option value = '' >----------</option>";
 
                                        while($row = mysqli_fetch_assoc(${"DBresult".$Cid})) {
 
@@ -70,7 +70,9 @@ include 'include/navigation.php';
                                 $x++;
 
                                }
+
                                 echo "spelType<select name = 'game'>";
+                                echo "<option value = '' >----------</option>";
                                 echo "<option value = 'Spel_1' >Spel_1</option>";
                                 echo "<option value = 'Spel_2' >Spel_2</option>";
                                 echo "<option value = 'Spel_3' >Spel_3</option>";
@@ -110,16 +112,16 @@ include 'include/navigation.php';
 
 
 
-                            $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 3 WHERE Botnaam = '$first' ";
+                            $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 3,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$first' ";
                             $DBresult1 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult1 === false) ? "could not execute query1" : NULL;
-                            $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 2 WHERE Botnaam = '$second' ";
+                            $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 2,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$second' ";
                             $DBresult2 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult2 === false) ? "could not execute query2" : NULL;
-                            $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 1 WHERE Botnaam = '$third' ";
+                            $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 1,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$third' ";
                             $DBresult3 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult3 === false) ? "could not execute query3" : NULL;
-                            $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 0 WHERE Botnaam = '$fourth' ";
+                            $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 0,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$fourth' ";
                             $DBresult4 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult4 === false) ? "could not execute query4" : NULL;
 
