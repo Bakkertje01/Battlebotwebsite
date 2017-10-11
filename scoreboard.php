@@ -104,11 +104,13 @@ include 'include/navigation.php';
                             $third = $_POST['Third'];
                             $fourth = $_POST['Fourth'];
                             $gameType = $_POST['game'];
-                            $dis1 = $_POST['dis1'];
+                            //geeft index error op een of andere reden
+
+                            /*$dis1 = $_POST['dis1'];
                             $dis2 = $_POST['dis2'];
                             $dis3 = $_POST['dis3'];
                             $dis4 = $_POST['dis4'];
-
+                            */
 
 
 
