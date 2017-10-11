@@ -64,12 +64,29 @@ include 'include/navigation.php';
 
 
                                 echo "</select>";
-                                //name of check is numbered 1 to 4 example: dis1
-                                echo "disqualified <input type = 'checkbox' name = 'dis".$Cid."' value = 0> <br>";
+
+
                                 $Cid++;
                                 $x++;
 
                                }
+                                echo "spelType<select name = 'game'>";
+                                echo "<option value = 'Spel_1' >Spel_1</option>";
+                                echo "<option value = 'Spel_2' >Spel_2</option>";
+                                echo "<option value = 'Spel_3' >Spel_3</option>";
+                                echo "<option value = 'Spel_4' >Spel_4</option>";
+                                echo "<option value = 'Spel_5' >Spel_5</option>";
+                                echo "</select>";
+
+                       echo "<br>";
+
+                       //doet nog niks
+                       echo "disqualified <input type = 'checkbox' name = 'dis1' value = 0>Team INF1F1A <br>";
+                       echo "disqualified <input type = 'checkbox' name = 'dis2' value = 0>Team INF1F1B <br>";
+                       echo "disqualified <input type = 'checkbox' name = 'dis3' value = 0>Team INF1F2A <br>";
+                       echo "disqualified <input type = 'checkbox' name = 'dis4' value = 0>Team INF1F2B <br>";
+
+
                        ?>
 
                        <!-- end loop here -->
@@ -83,24 +100,26 @@ include 'include/navigation.php';
                             $second = $_POST['Second'];
                             $third = $_POST['Third'];
                             $fourth = $_POST['Fourth'];
-                            $tel = 1;
-                            while($tel <= 4) {
-                                ${"dis".$tel} = $_POST['dis'.$tel];
-                                $tel++;
-                            }
+                            $gameType = $_POST['game'];
+                            //doet nog niks
+                            /*$dis1 = $_POST['dis1'];
+                            $dis2 = $_POST['dis2'];
+                            $dis3 = $_POST['dis3'];
+                            $dis4 = $_POST['dis4'];
+                            */
 
-							//add points to DB and add them to specific game
 
-                            $DBupdate = "UPDATE battlebot SET Totaalpunten = Totaalpunten + 3 WHERE Botnaam = '$first' ";
+
+                            $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 3 WHERE Botnaam = '$first' ";
                             $DBresult1 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult1 === false) ? "could not execute query1" : NULL;
-                            $DBupdate = "UPDATE battlebot SET Totaalpunten = Totaalpunten + 2 WHERE Botnaam = '$second' ";
+                            $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 2 WHERE Botnaam = '$second' ";
                             $DBresult2 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult2 === false) ? "could not execute query2" : NULL;
-                            $DBupdate = "UPDATE battlebot SET Totaalpunten = Totaalpunten + 1 WHERE Botnaam = '$third' ";
+                            $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 1 WHERE Botnaam = '$third' ";
                             $DBresult3 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult3 === false) ? "could not execute query3" : NULL;
-                            $DBupdate = "UPDATE battlebot SET Totaalpunten = Totaalpunten + 0 WHERE Botnaam = '$fourth' ";
+                            $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 0 WHERE Botnaam = '$fourth' ";
                             $DBresult4 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult4 === false) ? "could not execute query4" : NULL;
 
