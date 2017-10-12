@@ -83,10 +83,10 @@ include 'include/navigation.php';
                        echo "<br>";
 
                        //doet nog niks
-                       echo "disqualify <input type = 'checkbox' name = 'dis1' value = ''>Team INF1F1A <br>";
-                       echo "disqualify <input type = 'checkbox' name = 'dis2' value = ''>Team INF1F1B <br>";
-                       echo "disqualify <input type = 'checkbox' name = 'dis3' value = ''>Team INF1F2A <br>";
-                       echo "disqualify <input type = 'checkbox' name = 'dis4' value = ''>Team INF1F2B <br>";
+                       //echo "disqualify <input type = 'checkbox' name = 'dis1' value = ''>Team INF1F1A <br>";
+                       //echo "disqualify <input type = 'checkbox' name = 'dis2' value = ''>Team INF1F1B <br>";
+                       //echo "disqualify <input type = 'checkbox' name = 'dis3' value = ''>Team INF1F2A <br>";
+                       //echo "disqualify <input type = 'checkbox' name = 'dis4' value = ''>Team INF1F2B <br>";
 
 
                        ?>
@@ -104,8 +104,7 @@ include 'include/navigation.php';
                             $third = $_POST['Third'];
                             $fourth = $_POST['Fourth'];
                             $gameType = $_POST['game'];
-                          n
-
+                            //geeft index error op een of andere reden
 
 
 
@@ -129,6 +128,7 @@ include 'include/navigation.php';
                             $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 0,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$fourth' ";
                             $DBresult4 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult4 === false) ? "could not execute query4" : NULL;
+
 
 
                         }else{
