@@ -96,9 +96,20 @@ include 'include/db_connection.php';
                         </div>
                         <div class="panel-body">
                             <!--Content body hier! -->
+
                             <p>Hier worden de tussenstanden weergegeven. </p>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover table-striped">
+                                    <?php
+                                        $tel = 1;
+                                        $DBname = "battlebot";
+                                        $DBtable = "battlebot";
+                                        $DB = mysqli_select_db($connection,$DBname);
+                                        echo($DB === false)? "could not select database" : NULL;
+                                        $DBcommand = "SELECT * FROM $DBtable ORDER BY Totaalpunten DESC ";
+                                        $DBresult = mysqli_query($connection, $DBcommand);
+                                        echo ($DBresult=== false) ? "could not execute query" : NULL;
+                                    ?>
                                     <thead>
                                     <tr>
                                         <th>Plaats</th>
@@ -107,26 +118,16 @@ include 'include/db_connection.php';
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>INF1F1A</td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>INF1F1B</td>
-                                        <td>8</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>INF1F2A</td>
-                                        <td>6</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>INF1F2B</td>
-                                        <td>4</td>
-                                    </tr>
+                                    <?php
+                                        while ($row = mysqli_fetch_assoc($DBresult)) {
+                                            echo "<tr>";
+                                            echo "<td>$tel</td>";
+                                            echo "<td>{$row['Botnaam']}</td>";
+                                            echo "<td>{$row['Totaalpunten']}</td>";
+                                            echo "</tr>";
+                                            $tel++;
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
