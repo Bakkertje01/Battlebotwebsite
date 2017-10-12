@@ -107,12 +107,6 @@ include 'include/navigation.php';
                             //geeft index error op een of andere reden
 
 
-
-
-
-
-
-
                             $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 3,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$first' ";
                             $DBresult1 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult1 === false) ? "could not execute query1" : NULL;
@@ -135,7 +129,8 @@ include 'include/navigation.php';
                             die ("please fill in all of the dropdown boxes before procceding ");
 
                         }
-                    ?>
+
+                        ?>
 
                 </div>
 
