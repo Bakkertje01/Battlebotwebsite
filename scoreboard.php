@@ -119,7 +119,7 @@ include 'include/navigation.php';
                             $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 3,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$first' ";
                             $DBresult1 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult1 === false) ? "could not execute query1" : NULL;
-                            if(isset($dis1) && isset($first)){
+                            if(isset($dis1) && isset($first)){ ///game type - game type
                                 "UPDATE battlebot SET $gameType = $gameType - 3 ,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$first' ";
                             }
                             $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 2,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$second' ";
