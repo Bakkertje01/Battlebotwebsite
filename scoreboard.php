@@ -98,7 +98,7 @@ include 'include/navigation.php';
 
                     <?php
 
-                        if(isset($_POST["submit"])){
+                        if(isset($_POST["submit"]) && isset($gameType)){
                             if(isset($_POST['First']) && isset($_POST['Second']) && isset($_POST['Third']) && isset($_POST['Fourth'])) {
                                 $first = $_POST['First'];
                                 $second = $_POST['Second'];
