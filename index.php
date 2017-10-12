@@ -84,8 +84,7 @@ include 'include/db_connection.php';
                         </div>
                         </div>
                     </div>
-                </div>
-            </div>
+
 
             <!-- Nieuwe rij -->
             <div class="row">
