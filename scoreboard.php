@@ -104,12 +104,9 @@ include 'include/navigation.php';
                             $third = $_POST['Third'];
                             $fourth = $_POST['Fourth'];
                             $gameType = $_POST['game'];
-                            //geeft index error op een of andere reden
+                          n
 
-                            ($dis1 = $_POST['dis1'])? NULL : $dis1 = $_POST['dis1'];
-                            ($dis2 = $_POST['dis2'])? NULL : $dis2 = $_POST['dis2'];
-                            ($dis3 = $_POST['dis3'])? NULL : $dis3 = $_POST['dis3'];
-                            ($dis4 = $_POST['dis4'])? NULL : $dis4 = $_POST['dis4'];
+
 
 
 
@@ -120,27 +117,18 @@ include 'include/navigation.php';
                             $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 3,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$first' ";
                             $DBresult1 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult1 === false) ? "could not execute query1" : NULL;
-                            if(isset($dis1)){ ///game type - game type
-                                "UPDATE battlebot SET $gameType = $gameType - $gametype ,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$first' ";
-                            }
+
                             $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 2,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$second' ";
                             $DBresult2 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult2 === false) ? "could not execute query2" : NULL;
-                            if(isset($dis2)){
-                                "UPDATE battlebot SET $gameType = $gameType - $gameType ,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$second' ";
-                            }
+
                             $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 1,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$third' ";
                             $DBresult3 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult3 === false) ? "could not execute query3" : NULL;
-                            if(isset($dis3)){
-                                "UPDATE battlebot SET $gameType = $gameType - $gameType ,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$third' ";
-                            }
+
                             $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 0,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$fourth' ";
                             $DBresult4 = mysqli_query($connection, $DBupdate);
                             echo ($DBresult4 === false) ? "could not execute query4" : NULL;
-                            if(isset($dis4)){
-                                "UPDATE battlebot SET $gameType = $gameType - $gameType ,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$fourth' ";
-                            }
 
 
                         }else{
