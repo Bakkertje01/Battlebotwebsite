@@ -48,7 +48,7 @@ include 'include/navigation.php';
                            ${"DBresult".$Cid} = mysqli_query($connection, $DBcommand);
                            echo( ${"DBresult".$Cid} === false)? "query could not be executed": NULL;
 
-                           $place = array("First","Second","Third","Fourth"); // make multidimens
+                           $place = array("First","Second","Third","Fourth");
 
 
 
