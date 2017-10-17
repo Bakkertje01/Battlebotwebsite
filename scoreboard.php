@@ -74,7 +74,7 @@ include 'include/navigation.php';
                                 $games = array(); // needs to be filled in and added to select of game.
                                 echo "spelType<select name = 'game'>";
                                 echo "<option value = ''></option>";
-                                for($l = 1;$l <= 4;$l++) {
+                                for($l = 1; $l <= 5; $l++) {
                                     echo "<option value = 'Spel_$l' >Spel_$l</option>";
                                 }
                                 echo "</select>";
@@ -90,18 +90,17 @@ include 'include/navigation.php';
 
                     <?php
 
-
+                    $var_array = array("first","second","third","fourth");
                         if(isset($_POST["submit"]) && $_POST['game'] != '' && $_POST['First'] != ""
                             && $_POST['Second'] != '' && $_POST['Third'] != '' && $_POST['Fourth'] !=''){
+                            for($t = 0; $t<=3; $t++) {
+                                ${"$var_array[$t]"} = $_POST[$place[$t]];
 
-                                $first = $_POST['First'];
-                                $second = $_POST['Second'];
-                                $third = $_POST['Third'];
-                                $fourth = $_POST['Fourth'];
+                            }
                                 $gameType = $_POST['game'];
                             if($first != $second && $first != $third && $first != $fourth && $second != $third && $second != $fourth
                             && $third != $fourth ) {
-                                $var_array = array("first","second","third","fourth") ;
+
                                 $p = 0;
                                 $pointy = 3;
                                 while($p <= 3) {
