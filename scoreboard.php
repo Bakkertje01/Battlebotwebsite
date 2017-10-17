@@ -102,7 +102,7 @@ include 'include/navigation.php';
                                 }
                                 echo "The score has been changed";
                             }else{
-                                echo "Please do not fill in the same team multiple times";
+                                die("Please do not fill in the same team multiple times");
                             }
                         }else{
                             die ("please fill in all of the dropdown boxes before procceding ");
