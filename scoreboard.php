@@ -72,7 +72,7 @@ include 'include/navigation.php';
                                }
 
                                 echo "spelType<select name = 'game'>";
-                                echo "<option></option>";
+                                echo "<option value = ''></option>";
                                 echo "<option value = 'Spel_1' >Spel_1</option>";
                                 echo "<option value = 'Spel_2' >Spel_2</option>";
                                 echo "<option value = 'Spel_3' >Spel_3</option>";
@@ -98,16 +98,17 @@ include 'include/navigation.php';
 
                     <?php
 
-                        if(isset($_POST["submit"]) && isset($gameType)){
-                            if(isset($_POST['First']) && isset($_POST['Second']) && isset($_POST['Third']) && isset($_POST['Fourth'])) {
+
+                        if(isset($_POST["submit"]) && $_POST['game'] != '' && $_POST['First'] != ""
+                            && $_POST['Second'] != '' && $_POST['Third'] != '' && $_POST['Fourth'] !=''){
+
                                 $first = $_POST['First'];
                                 $second = $_POST['Second'];
                                 $third = $_POST['Third'];
                                 $fourth = $_POST['Fourth'];
                                 $gameType = $_POST['game'];
-                                //geeft index error op een of andere reden
-
-
+                            if($first != $second && $first != $third && $first != $fourth && $second != $third && $second != $fourth
+                            && $third != $fourth ) {
                                 $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 3,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$first' ";
                                 $DBresult1 = mysqli_query($connection, $DBupdate);
                                 echo ($DBresult1 === false) ? "could not execute query1" : NULL;
@@ -124,11 +125,15 @@ include 'include/navigation.php';
                                 $DBresult4 = mysqli_query($connection, $DBupdate);
                                 echo ($DBresult4 === false) ? "could not execute query4" : NULL;
 
-
+                                echo "The score has been changed";
                             }else{
-
-                                 die ("please fill in all of the dropdown boxes before procceding ");
+                                echo "Please do not fill in the same team multiple times";
                             }
+
+
+                        }else{
+
+                        die ("please fill in all of the dropdown boxes before procceding ");
                         }
 
                         ?>
