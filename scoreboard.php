@@ -105,7 +105,7 @@ include 'include/navigation.php';
                                 die("Please do not fill in the same team multiple times");
                             }
                         }else{
-                            die ("please fill in all of the dropdown boxes before procceding ");
+                            die ("please fill in all of the drop down boxes before proceeding ");
                         }
 
                         ?>
