@@ -37,6 +37,7 @@ include 'include/navigation.php';
                 <div class="col-lg-6">
                    <form action = "scoreboard.php" method = "POST" >
                        <?php
+
                        $x = 0;
                        $Cid = 1;
                        while($Cid < 5){
@@ -70,24 +71,15 @@ include 'include/navigation.php';
                                 $x++;
 
                                }
-
+                                $games = array(); // needs to be filled in and added to select of game.
                                 echo "spelType<select name = 'game'>";
                                 echo "<option value = ''></option>";
-                                echo "<option value = 'Spel_1' >Spel_1</option>";
-                                echo "<option value = 'Spel_2' >Spel_2</option>";
-                                echo "<option value = 'Spel_3' >Spel_3</option>";
-                                echo "<option value = 'Spel_4' >Spel_4</option>";
-                                echo "<option value = 'Spel_5' >Spel_5</option>";
+                                for($l = 1;$l <= 4;$l++) {
+                                    echo "<option value = 'Spel_$l' >Spel_$l</option>";
+                                }
                                 echo "</select>";
 
                        echo "<br>";
-
-                       //doet nog niks
-                       //echo "disqualify <input type = 'checkbox' name = 'dis1' value = ''>Team INF1F1A <br>";
-                       //echo "disqualify <input type = 'checkbox' name = 'dis2' value = ''>Team INF1F1B <br>";
-                       //echo "disqualify <input type = 'checkbox' name = 'dis3' value = ''>Team INF1F2A <br>";
-                       //echo "disqualify <input type = 'checkbox' name = 'dis4' value = ''>Team INF1F2B <br>";
-
 
                        ?>
 
@@ -109,22 +101,17 @@ include 'include/navigation.php';
                                 $gameType = $_POST['game'];
                             if($first != $second && $first != $third && $first != $fourth && $second != $third && $second != $fourth
                             && $third != $fourth ) {
-                                $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 3,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$first' ";
-                                $DBresult1 = mysqli_query($connection, $DBupdate);
-                                echo ($DBresult1 === false) ? "could not execute query1" : NULL;
+                                $var_array = array("first","second","third","fourth") ;
+                                $p = 0;
+                                $pointy = 3;
+                                while($p <= 3) {
+                                    $DBupdate = "UPDATE battlebot SET $gameType = $gameType + $pointy,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '${$var_array[$p]}' ";
+                                    ${"DBresult".$p} = mysqli_query($connection, $DBupdate);
+                                    echo (${"DBresult".$p} === false) ? "could not execute query1" : NULL;
 
-                                $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 2,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$second' ";
-                                $DBresult2 = mysqli_query($connection, $DBupdate);
-                                echo ($DBresult2 === false) ? "could not execute query2" : NULL;
-
-                                $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 1,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$third' ";
-                                $DBresult3 = mysqli_query($connection, $DBupdate);
-                                echo ($DBresult3 === false) ? "could not execute query3" : NULL;
-
-                                $DBupdate = "UPDATE battlebot SET $gameType = $gameType + 0,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$fourth' ";
-                                $DBresult4 = mysqli_query($connection, $DBupdate);
-                                echo ($DBresult4 === false) ? "could not execute query4" : NULL;
-
+                                    $p++;
+                                    $pointy--;
+                                }
                                 echo "The score has been changed";
                             }else{
                                 echo "Please do not fill in the same team multiple times";
