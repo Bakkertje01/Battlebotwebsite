@@ -51,13 +51,6 @@
             </li>
 
 
-            <li>
-                <a href="signUp.php"><i class="fa fa-fw fa-newspaper-o"></i> Registreer voor test</a>
-            </li>
-            <li>
-                <a href="log.php"><i class="fa fa-fw fa-newspaper-o"></i> Logbestand</a>
-            </li>
-
             <?php
 
             if (isset($_SESSION['User_ID'])) {
@@ -69,14 +62,9 @@
                     $functie = $row["Websitefunctie"];
 
                     switch ($functie) {
-                        case "Camera":
-                            echo '<li>
-                                <a href="camera.php"><i class="fa fa-fw fa-newspaper-o"></i> Camera Besturen</a>
-                             </li>';
-                            break;
                         case "Jury":
                             echo '<li>
-                                <a href="scoreboard.php"><i class="fa fa-fw fa-newspaper-o"></i> Punten Doorvoeren</a>
+                                <a href="scoreboard.php"><i class="fa fa-fw fa-flag-checkered"></i> Punten Doorvoeren</a>
                              </li>';
                             break;
                         case "Team":
@@ -86,16 +74,10 @@
                             break;
                         case "Admin":
                             echo '<li>
-                                     <a href="camera.php"><i class="fa fa-fw fa-newspaper-o"></i> Camera Besturen</a>
-                                  </li>
-                                  <li>
-                                    <a href="scoreboard.php"><i class="fa fa-fw fa-newspaper-o"></i> Punten Doorvoeren</a>
+                                    <a href="scoreboard.php"><i class="fa fa-fw fa-flag-checkered"></i> Punten Doorvoeren</a>
                                  </li>
                                   <li>
                                     <a href="controller.php"><i class="fa fa-fw fa-gamepad"></i> Besturing</a>
-                                  </li>
-                                  <li>
-                                    <a href="log.php"><i class="fa fa-fw fa-gamepad"></i> Logbestand</a>
                                   </li>';
                             break;
                         default:
@@ -108,6 +90,14 @@
             }
 
             ?>
+
+            <li>
+                <a href="log.php"><i class="fa fa-fw fa-newspaper-o"></i> Logbestand</a>
+            </li>
+
+            <li>
+                <a href="signUp.php"><i class="fa fa-fw fa-newspaper-o"></i> Registreer voor test</a>
+            </li>
 
             <!--
 					<li>
