@@ -82,11 +82,11 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
 /*Battlebots invoer:*/
-INSERT INTO `battlebot` (`Battlebot_ID`, `Botgeluidje`, `Botnaam`, `Totaalpunten`, `Afbeeldingpath`) VALUES (NULL, NULL, 'INF1F1A', NULL, NULL);
-INSERT INTO `battlebot` (`Battlebot_ID`, `Botgeluidje`, `Botnaam`, `Totaalpunten`, `Afbeeldingpath`) VALUES (NULL, NULL, 'INF1F1B', NULL, NULL);
-INSERT INTO `battlebot` (`Battlebot_ID`, `Botgeluidje`, `Botnaam`, `Totaalpunten`, `Afbeeldingpath`) VALUES (NULL, NULL, 'INF1F2A', NULL, NULL);
-INSERT INTO `battlebot` (`Battlebot_ID`, `Botgeluidje`, `Botnaam`, `Totaalpunten`, `Afbeeldingpath`) VALUES (NULL, NULL, 'INF1F2B', NULL, NULL);
-INSERT INTO `battlebot` (`Battlebot_ID`, `Botgeluidje`, `Botnaam`, `Totaalpunten`, `Afbeeldingpath`) VALUES (NULL, NULL, 'Camera', NULL, NULL);
+INSERT INTO `battlebot` (`Battlebot_ID`, `Botgeluidje`, `Botnaam`, `Totaalpunten`, `Afbeeldingpath`) VALUES (NULL, NULL, 'INF1F1A', '0', NULL);
+INSERT INTO `battlebot` (`Battlebot_ID`, `Botgeluidje`, `Botnaam`, `Totaalpunten`, `Afbeeldingpath`) VALUES (NULL, NULL, 'INF1F1B', '0', NULL);
+INSERT INTO `battlebot` (`Battlebot_ID`, `Botgeluidje`, `Botnaam`, `Totaalpunten`, `Afbeeldingpath`) VALUES (NULL, NULL, 'INF1F2A', '0', NULL);
+INSERT INTO `battlebot` (`Battlebot_ID`, `Botgeluidje`, `Botnaam`, `Totaalpunten`, `Afbeeldingpath`) VALUES (NULL, NULL, 'INF1F2B', '0', NULL);
+INSERT INTO `battlebot` (`Battlebot_ID`, `Botgeluidje`, `Botnaam`, `Totaalpunten`, `Afbeeldingpath`) VALUES (NULL, NULL, 'Camera', '0', NULL);
 
 /*Klas invoer:*/
 INSERT INTO `leden` (`Lid_ID`, `Naam`, `Achternaam`, `Groepsfunctie`, `Battlebot_Battlebot_ID`) VALUES (NULL, 'Ernst-Jan', 'Bakker', 'Website', '1');

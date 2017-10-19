@@ -53,7 +53,24 @@ include 'include/db_connection.php';
                         <div class="panel-body">
                             <!--Content body hier! -->
                             <p>Hier word de statische camera weergegeven. </p>
-                            <img alt="" src="http://webcam.serverict.nl/videostream.cgi">
+
+
+
+                            <?php
+
+                            $user = "user";
+                            $password = "user_12";
+
+
+                            //echo $user;
+
+
+
+                            echo "<img alt='' src='http://webcam.serverict.nl/videostream.cgi?user={$user}&pwd={$password}'>";
+
+                                ?>
+
+
 
                         </div>
                     </div>
@@ -67,15 +84,60 @@ include 'include/db_connection.php';
                         <div class="panel-body">
                             <!--Content body hier! -->
                             <p> Hier wordt de dome camera weergegeven. </p>
-                            <img class="image-responsive" alt="" src="http://foscam.serverict.nl/videostream.cgi?user=guest&pwd=">
+
+                            <?php
+
+                            $user = "user";
+                            $password = "user_12";
+
+
+                            echo "<img alt='' src='http://foscam.serverict.nl/videostream.cgi?user={$user}&pwd={$password}'>";
+                            echo ""
+
+                            ?>
+
+
 
                             <div></div>
 
-                            <div id="cam-section"">
-                                <a href="http://foscam.serverict.nl/decoder_control.cgi?command=6&onestep=5&user=guest&pwd=" target="control"><button id="cam-left"></button></a>
-                                <a href="http://foscam.serverict.nl/decoder_control.cgi?command=nn&onestep=5&user=guest&pwd=" target="control"><button id="cam-up"></button></a>
-                                <a href="http://foscam.serverict.nl/decoder_control.cgi?command=4&onestep=5&user=guest&pwd=" target="control"><button id="cam-right"></button></a>
-                                <a href="http://foscam.serverict.nl/decoder_control.cgi?command=2&onestep=5&user=guest&pwd=" target="control"><button id="cam-down"></button></a>
+                            <div class="cam-section"">
+
+                            <form action="/my-handling-form-page" method="post">
+                                <div>
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="user_name" />
+                                </div>
+                                <div>
+                                    <label for="mail">E-mail:</label>
+                                    <input type="email" id="mail" name="user_mail" />
+                                </div>
+                                <div>
+                                    <label for="msg">Message:</label>
+                                    <textarea id="msg" name="user_message"></textarea>
+                                </div>
+
+                                <div class="button">
+                                    <button type="submit">Send your message</button>
+                                </div>
+                            </form>
+
+
+                            <?php
+
+                            $user = "user";
+                            $password = "user_12";
+
+                            echo "<a href='http://foscam.serverict.nl/decoder_control.cgi?command=6&onestep=5&user={$user}&pwd={$password}' target='control'><button id='left'></button></a>";
+                            echo "<a href='http://foscam.serverict.nl/decoder_control.cgi?command=nn&onestep=5&user={$user}&pwd={$password}' target='control'><button id='up'></button></a>";
+                            echo "<a href='http://foscam.serverict.nl/decoder_control.cgi?command=4&onestep=5&user={$user}&pwd={$password}' target='control'><button id='right'></button></a>";
+                            echo "<a href='http://foscam.serverict.nl/decoder_control.cgi?command=2&onestep=5&user={$user}&pwd={$password}' target='control'><button id='down'></button></a>";
+
+                            ?>
+
+
+
+
+
                             </div>
                         </div>
 
