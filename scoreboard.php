@@ -32,7 +32,11 @@ include 'include/navigation.php';
             <!-- Body content-->
             <!-- BELANGRIJK: Zorg dat alle content in een row en vervolgens in een panel wordt gezet.
             Zodat de stijl op elke pagina gelijk is en altijd resposive is. Kijk voor voorbeeld in de index. -->
-
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa-fw"></i> Scores Invoer</h3>
+                </div>
+                <div class="panel-body">
                 <div class="col-lg-6">
                    <form action = "scoreboard.php" method = "POST" >
                        <?php
@@ -48,6 +52,7 @@ include 'include/navigation.php';
                            ${"DBresult".$Cid} = mysqli_query($connection, $DBcommand);
                            echo( ${"DBresult".$Cid} === false)? "query could not be executed": NULL;
                            $place = array("First","Second","Third","Fourth");
+                           echo "<tbody>";
                                 echo "$place[$x]<select name = '$place[$x]'>";
                                 echo "<option></option>";
 
@@ -59,7 +64,7 @@ include 'include/navigation.php';
                                 $Cid++;
                                 $x++;
                                }
-                                $games = array(); // needs to be filled in and added to select of game.
+
                                 echo "spelType<select name = 'game'>";
                                 echo "<option value = ''></option>";
 
@@ -71,12 +76,19 @@ include 'include/navigation.php';
 
                        echo "<br>";
 
+
                        ?>
+                       <b>Disqualify Teams</b>
+                       <p>INF1F1A <input type="checkbox" name="d1" value="INF1F1A"></p>
+                       <p>INF1F1B <input type="checkbox" name="d2" value="INF1F1B"></p>
+                       <p>INF1F2A <input type="checkbox" name="d3" value="INF1F2A"></p>
+                       <p>INF1F2B <input type="checkbox" name="d4" value="INF1F2B"></p>
 
-                       <!-- end loop here -->
+
                        <input type = "submit" name = "submit" value = "submit">
-
                    </form>
+
+
 
                     <?php
 
@@ -102,15 +114,55 @@ include 'include/navigation.php';
                                     $p++;
                                     $pointy--;
                                 }
-                                echo "The score has been changed";
+                                echo "The score has been changed"."<br>";
                             }else{
-                                die("Please do not fill in the same team multiple times");
+                                echo "Please do not fill in the same team multiple times"."<br>";
                             }
                         }else{
-                            die ("please fill in all of the drop down boxes before proceeding ");
+                            echo "please fill in all of the dropdown boxes containing the teams, if you want to add points"."<br>";
                         }
 
-                        ?>
+
+                    ?>
+
+                    <?php
+
+                    if(isset($_POST['submit']) && $_POST['game']) {
+                        $gameType = $_POST['game'];
+                        if(isset($_POST['d1'])) {
+                            $d1 = $_POST['d1'];
+                            $pointPurge = "UPDATE battlebot SET $gameType = $gameType - $gameType ,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$d1'";
+                            $DBdis1 = mysqli_query($connection, $pointPurge);
+                            echo ($DBdis1 === false) ? "could not disqualify team {$d1}" : "team {$d1} has been disqualified" ;
+                            echo "<br>";
+
+                        } if (isset($_POST['d2'])) {
+                            $d2 = $_POST['d2'];
+                            $pointPurge = "UPDATE battlebot SET $gameType = $gameType - $gameType,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam ='$d2'";
+                            $DBdis2 = mysqli_query($connection, $pointPurge);
+                            echo ($DBdis2 === false) ? "could not disqualify team {$d2}" : "team {$d2} has been disqualified";
+                            echo "<br>";
+
+                        } if (isset($_POST['d3'])) {
+                            $d3 = $_POST['d3'];
+                            $pointPurge = "UPDATE battlebot SET $gameType = $gameType - $gameType,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '$d3'";
+                            $DBdis3 = mysqli_query($connection, $pointPurge);
+                            echo ($DBdis3 === false) ? "could not disqualify team {$d3}" : "team {$d3} has been disqualified";
+                            echo "<br>";
+
+                        } if (isset($_POST['d4'])) {
+                            $d4 = $_POST['d4'];
+                            $pointPurge = "UPDATE battlebot SET $gameType = $gameType - $gameType,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam ='$d4'";
+                            $DBdis4 = mysqli_query($connection, $pointPurge);
+                            echo ($DBdis4 === false) ? "could not disqualify team {$d4}" : "team {$d4} has been disqualified";
+                            echo "<br>";
+
+                        } else {
+
+                        }
+                    }
+                    ?>
+                </div>
                 </div>
         </div>
     </div>
