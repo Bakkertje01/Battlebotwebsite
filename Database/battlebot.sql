@@ -100,7 +100,7 @@ INSERT INTO `leden` (`Lid_ID`, `Naam`, `Achternaam`, `Groepsfunctie`, `Battlebot
 INSERT INTO `leden` (`Lid_ID`, `Naam`, `Achternaam`, `Groepsfunctie`, `Battlebot_Battlebot_ID`) VALUES (NULL, 'Lennart', 'Pikijn', 'Battlebot', '2');
 INSERT INTO `leden` (`Lid_ID`, `Naam`, `Achternaam`, `Groepsfunctie`, `Battlebot_Battlebot_ID`) VALUES (NULL, 'Niek', 'Luttikhof', 'Website', '3');
 INSERT INTO `leden` (`Lid_ID`, `Naam`, `Achternaam`, `Groepsfunctie`, `Battlebot_Battlebot_ID`) VALUES (NULL, 'Yaron', 'Lambers', 'Netwerkbeheerder', '3');
-INSERT INTO `leden` (`Lid_ID`, `Naam`, `Achternaam`, `Groepsfunctie`, `Battlebot_Battlebot_ID`) VALUES (NULL, 'Thomas', 'Christerus', 'Battlebot', '3');
+INSERT INTO `leden` (`Lid_ID`, `Naam`, `Achternaam`, `Groepsfunctie`, `Battlebot_Battlebot_ID`) VALUES (NULL, 'Thomas', 'Christerus', 'Netwerkbeheerder', '3');
 INSERT INTO `leden` (`Lid_ID`, `Naam`, `Achternaam`, `Groepsfunctie`, `Battlebot_Battlebot_ID`) VALUES (NULL, 'Tim', 'Zuiderveld', 'Battlebot', '3');
 INSERT INTO `leden` (`Lid_ID`, `Naam`, `Achternaam`, `Groepsfunctie`, `Battlebot_Battlebot_ID`) VALUES (NULL, 'Dennis', 'Boer', 'Battlebot', '4');
 INSERT INTO `leden` (`Lid_ID`, `Naam`, `Achternaam`, `Groepsfunctie`, `Battlebot_Battlebot_ID`) VALUES (NULL, 'Justin', 'Westerling', 'Website', '4');

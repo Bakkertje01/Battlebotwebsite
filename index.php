@@ -7,6 +7,10 @@ if (isset($_POST['bedien'])){
 	setcookie($cookie_name, $cookie_value, time() + (120), "/");
 
 }
+
+$user = "user";
+$password = "user_12";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,10 +24,10 @@ if (isset($_POST['bedien'])){
 </head>
 
 <body>
-    <?php
-    include 'include/navigation.php';
-   // include 'includes/db_connection.php';
-    ?>
+<?php
+include 'include/navigation.php';
+// include 'includes/db_connection.php';
+?>
 <div id="wrapper">
     <div id="page-wrapper">
         <div class="container-fluid">
@@ -37,9 +41,8 @@ if (isset($_POST['bedien'])){
                         <?php
 
                         if (isset($_SESSION['User_ID'])) {
-                            echo  ucfirst($_SESSION['Gebruikersnaam']);
+                            echo ucfirst($_SESSION['Gebruikersnaam']);
                         }
-
 
 
                         ?>
@@ -60,22 +63,9 @@ if (isset($_POST['bedien'])){
                             <!--Content body hier! -->
                             <p>Hier word de statische camera weergegeven. </p>
 
-
-
                             <?php
-
-                            $user = "user";
-                            $password = "user_12";
-
-
-                            //echo $user;
-
-
-
-                            echo "<img alt='' src='http://webcam.serverict.nl/videostream.cgi?user={$user}&pwd={$password}'>";
-
-                                ?>
-
+                            echo "<img class = 'img-responsive' alt='' src='http://webcam.serverict.nl/videostream.cgi?user={$user}&pwd={$password}'>";
+                            ?>
 
 
                         </div>
@@ -92,14 +82,7 @@ if (isset($_POST['bedien'])){
                             <p> Hier wordt de dome camera weergegeven. </p>
 
                             <?php
-
-                            $user = "user";
-                            $password = "user_12";
-
-
-                            echo "<img alt='' src='http://foscam.serverict.nl/videostream.cgi?user={$user}&pwd={$password}'>";
-                            echo ""
-
+                            echo "<img class = 'img-responsive' alt='' src='http://foscam.serverict.nl/videostream.cgi?user={$user}&pwd={$password}'>";
                             ?>
 
                             <?php
@@ -140,122 +123,122 @@ if (isset($_POST['bedien'])){
                     </div>
 
 
-            <!-- Nieuwe rij -->
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="panel panel-warning">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Tussenstanden</h3>
-                        </div>
-                        <div class="panel-body">
-                            <!--Content body hier! -->
-
-                            <p>Hier worden de tussenstanden weergegeven. </p>
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover table-striped">
-                                    <?php
-                                        $tel = 1;
-                                        $DBname = "battlebot";
-                                        $DBtable = "battlebot";
-                                        $DB = mysqli_select_db($connection,$DBname);
-                                        echo($DB === false)? "could not select database" : NULL;
-                                        $DBcommand = "SELECT * FROM $DBtable ORDER BY Totaalpunten DESC ";
-                                        $DBresult = mysqli_query($connection, $DBcommand);
-                                        echo ($DBresult=== false) ? "could not execute query" : NULL;
-                                    ?>
-                                    <thead>
-                                    <tr>
-                                        <th>Plaats</th>
-                                        <th>Team</th>
-                                        <th>Punten</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php
-                                        while ($row = mysqli_fetch_assoc($DBresult)) {
-                                            echo "<tr>";
-                                            echo "<td>$tel</td>";
-                                            echo "<td>{$row['Botnaam']}</td>";
-                                            echo "<td>{$row['Totaalpunten']}</td>";
-                                            echo "</tr>";
-                                            $tel++;
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                        </div>
+        <!-- Nieuwe rij -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Tussenstanden</h3>
                     </div>
-                </div>
+                    <div class="panel-body">
+                        <!--Content body hier! -->
 
-                <div class="col-lg-6">
-                    <div class="panel panel-warning">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Data battlebots</h3>
+                        <p>Hier worden de tussenstanden weergegeven. </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <?php
+                                $tel = 1;
+                                $DBname = "battlebot";
+                                $DBtable = "battlebot";
+                                $DB = mysqli_select_db($connection, $DBname);
+                                echo ($DB === false) ? "could not select database" : NULL;
+                                $DBcommand = "SELECT * FROM $DBtable ORDER BY Totaalpunten DESC ";
+                                $DBresult = mysqli_query($connection, $DBcommand);
+                                echo ($DBresult === false) ? "could not execute query" : NULL;
+                                ?>
+                                <thead>
+                                <tr>
+                                    <th>Plaats</th>
+                                    <th>Team</th>
+                                    <th>Punten</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                while ($row = mysqli_fetch_assoc($DBresult)) {
+                                    echo "<tr>";
+                                    echo "<td>$tel</td>";
+                                    echo "<td>{$row['Botnaam']}</td>";
+                                    echo "<td>{$row['Totaalpunten']}</td>";
+                                    echo "</tr>";
+                                    $tel++;
+                                }
+                                ?>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="panel-body">
-                            <!--Content body hier! -->
-                            <p> Hier wordt data van de battlebot weergegeven. </p>
 
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover table-striped">
-                                    <thead>
-                                    <tr>
-                                        <th>Team</th>
-                                        <td>INF1F1A</td>
-                                        <td>INF1F1B</td>
-                                        <td>INF1F2A</td>
-                                        <td>INF1F2B</td>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th>Snelheid</th>
-                                        <td>2.1 km/h</td>
-                                        <td>4.2 km/h</td>
-                                        <td>3.9 km/h</td>
-                                        <td>5.1 km/h</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Afstand</th>
-                                        <td>30 meter</td>
-                                        <td>30 meter</td>
-                                        <td>30 meter</td>
-                                        <td>30 meter</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Display text</th>
-                                        <td>Aan</td>
-                                        <td>Aan</td>
-                                        <td>Aan</td>
-                                        <td>Aan</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Rijtijd</th>
-                                        <td>5.41</td>
-                                        <td>7.21</td>
-                                        <td>3.53</td>
-                                        <td>6.50</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>
 
+            <div class="col-lg-6">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Data battlebots</h3>
+                    </div>
+                    <div class="panel-body">
+                        <!--Content body hier! -->
+                        <p> Hier wordt data van de battlebot weergegeven. </p>
 
-            <!-- HIER EINDIGD DE CONTENT -->
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Team</th>
+                                    <td>INF1F1A</td>
+                                    <td>INF1F1B</td>
+                                    <td>INF1F2A</td>
+                                    <td>INF1F2B</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th>Snelheid</th>
+                                    <td>2.1 km/h</td>
+                                    <td>4.2 km/h</td>
+                                    <td>3.9 km/h</td>
+                                    <td>5.1 km/h</td>
+                                </tr>
+                                <tr>
+                                    <th>Afstand</th>
+                                    <td>30 meter</td>
+                                    <td>30 meter</td>
+                                    <td>30 meter</td>
+                                    <td>30 meter</td>
+                                </tr>
+                                <tr>
+                                    <th>Display text</th>
+                                    <td>Aan</td>
+                                    <td>Aan</td>
+                                    <td>Aan</td>
+                                    <td>Aan</td>
+                                </tr>
+                                <tr>
+                                    <th>Rijtijd</th>
+                                    <td>5.41</td>
+                                    <td>7.21</td>
+                                    <td>3.53</td>
+                                    <td>6.50</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- /.container-fluid -->
+
+
+        <!-- HIER EINDIGD DE CONTENT -->
+
 
     </div>
-    <!-- /#page-wrapper -->
+    <!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
 </div>
 <!-- /#wrapper -->
 
