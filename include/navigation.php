@@ -47,12 +47,9 @@
             </li>
 
             <li>
-                <a href="standen.php"><i class="fa fa-fw fa-table"></i> Standen</a>
+                <a href="standen.php"><i class="fa fa-fw fa-table"></i> Uitslagen</a>
             </li>
 
-            <li>
-                <a href="controller.php"><i class="fa fa-fw fa-gamepad"></i> Besturing</a>
-            </li>
 
             <li>
                 <a href="signUp.php"><i class="fa fa-fw fa-newspaper-o"></i> Registreer voor test</a>
@@ -69,7 +66,7 @@
                 $row = mysqli_fetch_assoc($result);
                 if (!empty($result)) {
 
-                    $functie = $row["Websitefunctie"];;
+                    $functie = $row["Websitefunctie"];
 
                     switch ($functie) {
                         case "Camera":
@@ -79,23 +76,23 @@
                             break;
                         case "Jury":
                             echo '<li>
-                                <a href="punten.php"><i class="fa fa-fw fa-newspaper-o"></i> Punten Doorvoeren</a>
+                                <a href="scoreboard.php"><i class="fa fa-fw fa-newspaper-o"></i> Punten Doorvoeren</a>
                              </li>';
                             break;
                         case "Team":
                             echo '<li>
-                                <a href="controller.php"><i class="fa fa-fw fa-newspaper-o"></i> Battlebot Besturen</a>
-                             </li>';
+                                    <a href="controller.php"><i class="fa fa-fw fa-gamepad"></i> Besturing</a>
+                                  </li>';
                             break;
                         case "Admin":
                             echo '<li>
                                      <a href="camera.php"><i class="fa fa-fw fa-newspaper-o"></i> Camera Besturen</a>
                                   </li>
                                   <li>
-                                    <a href="punten.php"><i class="fa fa-fw fa-newspaper-o"></i> Punten Doorvoeren</a>
+                                    <a href="scoreboard.php"><i class="fa fa-fw fa-newspaper-o"></i> Punten Doorvoeren</a>
                                  </li>
                                   <li>
-                                    <a href="controller.php"><i class="fa fa-fw fa-gamepad"></i> Battlebot Besturen</a>
+                                    <a href="controller.php"><i class="fa fa-fw fa-gamepad"></i> Besturing</a>
                                   </li>
                                   <li>
                                     <a href="log.php"><i class="fa fa-fw fa-gamepad"></i> Logbestand</a>

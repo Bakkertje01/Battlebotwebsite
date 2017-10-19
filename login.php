@@ -32,6 +32,7 @@ if(isset($_POST['submit'])){
     $result = mysqli_query($connection, "SELECT * FROM user WHERE Gebruikersnaam='$username' LIMIT 1")
     OR DIE ('error: '. mysqli_error($connection));
 
+
     $row = mysqli_fetch_array($result);
     if (is_array($row) && password_verify($pass, $row['Wachtwoord']) ) {
 
