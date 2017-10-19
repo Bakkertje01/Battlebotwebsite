@@ -1,6 +1,12 @@
 <?php
 include "include/session.php";
 include 'include/db_connection.php';
+$cookie_name = "camera";
+$cookie_value = "bezet";
+if (isset($_POST['bedien'])){
+	setcookie($cookie_name, $cookie_value, time() + (120), "/");
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,33 +102,38 @@ include 'include/db_connection.php';
 
                             ?>
 
-
-
-                            <div></div>
-
-                            <div class="section"">
-
-
                             <?php
-
-                            $user = "user";
-                            $password = "user_12";
-
-                            echo "<a href='http://foscam.serverict.nl/decoder_control.cgi?command=6&onestep=5&user={$user}&pwd={$password}' target='control'><button id='left'></button></a>";
-                            echo "<a href='http://foscam.serverict.nl/decoder_control.cgi?command=nn&onestep=5&user={$user}&pwd={$password}' target='control'><button id='up'></button></a>";
-                            echo "<a href='http://foscam.serverict.nl/decoder_control.cgi?command=4&onestep=5&user={$user}&pwd={$password}' target='control'><button id='right'></button></a>";
-                            echo "<a href='http://foscam.serverict.nl/decoder_control.cgi?command=2&onestep=5&user={$user}&pwd={$password}' target='control'><button id='down'></button></a>";
-
+                            if ($_SESSION["camera"] = "Bezet"){
+                                echo "Camera is bezet. Probeer het over 2 min weer.";
+                            }else{
+	                            if (!isset($_COOKIE[$cookie_name])) {
+		                            unset($_SESSION['camera']);
+		                            echo "klik om de camera te bedienen";
+		                            echo "
+                                    <form action=\"index.php\" method=\"post\">
+                                        <input type=\"submit\" name=\"bedien\" value=\"bedien\">
+                                    </form>";
+	                            } else {
+		                            $_SESSION["camera"] = "bezet";
+		                            echo "De " . $cookie_name . " kan bediend worden!";
+		                            $user = "user";
+		                            $password = "user_12";
+		                            echo " 
+                                        <div id=\"cam-section\"\">
+                                            <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=6&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-left\"></button></a>
+                                            <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=nn&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-up\"></button></a>
+                                            <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=4&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-right\"></button></a>
+                                            <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=2&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-down\"></button></a>
+                                        </div>";
+	                            }
+                            }
                             ?>
 
 
 
 
 
-                            </div>
                         </div>
-
-                            <iframe name="control" height="1" width="1"></iframe>
                             <!--<img src="images/camera.jpg" class="img-responsive" alt="camera" />-->
                         </div>
                         </div>
