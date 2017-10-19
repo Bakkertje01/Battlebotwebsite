@@ -36,7 +36,7 @@ include 'include/navigation.php';
 
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="panel panel-info">
+					<div class="panel panel-warning panel-info">
 						<div class="panel-heading">
 							<h3 class="panel-title"><i class="fa-fw"></i> Algemene regels</h3>
 						</div>
@@ -68,7 +68,7 @@ include 'include/navigation.php';
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="panel panel-info">
+					<div class="panel panel-warning panel-info">
 						<div class="panel-heading">
 							<h3 class="panel-title"><i class="fa-fw"></i> Race</h3>
 						</div>
@@ -91,7 +91,7 @@ include 'include/navigation.php';
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="panel panel-info">
+					<div class="panel panel-warning panel-info">
 						<div class="panel-heading">
 							<h3 class="panel-title"><i class="fa-fw"></i> Sumo</h3>
 						</div>
@@ -113,7 +113,7 @@ include 'include/navigation.php';
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="panel panel-info">
+					<div class="panel panel-warning panel-info">
 						<div class="panel-heading">
 							<h3 class="panel-title"><i class="fa-fw"></i> Obstakels ontwijken</h3>
 						</div>
