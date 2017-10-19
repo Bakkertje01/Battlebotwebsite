@@ -7,6 +7,8 @@
     <?php
     include 'include/head.php';
     include_once "include/db_connection.php";
+    include 'include/session.php';
+    include 'include/noacces/noacces_scoreboard.php';
     ?>
 
 </head>
