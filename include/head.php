@@ -6,6 +6,10 @@
 
 <title>Battlebot Dashboard</title>
 
+<!--socket.io libary -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <link rel="icon" href="images/favicon.png" type="image/x-icon"/>
 
 <!-- Bootstrap Core CSS -->
