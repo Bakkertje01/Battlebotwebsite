@@ -3,10 +3,29 @@ include "include/session.php";
 include 'include/db_connection.php';
 $cookie_name = "camera";
 $cookie_value = "bezet";
-if (isset($_POST['bedien'])){
+
+function redirect_to($new_location)
+{
+	header("Location: " . $new_location);
+	exit;
+}
+
+if (isset($_POST['bedien'])) {
+
 	setcookie($cookie_name, $cookie_value, time() + (120), "/");
+	$_SESSION["camera"] = "bezet";
+	redirect_to("index.php");
 
 }
+if ($_SESSION["camera"] = "bezet") {
+	header("refresh:120;url=index.php");
+}
+
+if (isset($_SESSION["camera"]) && (time() - $_SESSION["camera"] > 120)) {
+	session_unset($_SESSION["camera"]);     // unset $_SESSION variable for the run-time
+}
+
+
 
 $user = "user";
 $password = "user_12";
@@ -64,6 +83,9 @@ include 'include/navigation.php';
                             <p>Hier word de statische camera weergegeven. </p>
 
                             <?php
+
+                            $user = "user";
+                            $password = "user_12";
                             echo "<img class = 'img-responsive' alt='' src='http://webcam.serverict.nl/videostream.cgi?user={$user}&pwd={$password}'>";
                             ?>
 
@@ -86,19 +108,15 @@ include 'include/navigation.php';
                             ?>
 
                             <?php
-                            if ($_SESSION["camera"] = "Bezet"){
-                                echo "Camera is bezet. Probeer het over 2 min weer.";
-                            }else{
+                            if (!isset($_SESSION["camera"])){
 	                            if (!isset($_COOKIE[$cookie_name])) {
-		                            unset($_SESSION['camera']);
-		                            echo "klik om de camera te bedienen";
+		                            echo "<p>klik om de camera te bedienen</p>";
 		                            echo "
                                     <form action=\"index.php\" method=\"post\">
                                         <input type=\"submit\" name=\"bedien\" value=\"bedien\">
                                     </form>";
 	                            } else {
-		                            $_SESSION["camera"] = "bezet";
-		                            echo "De " . $cookie_name . " kan bediend worden!";
+		                            echo "<p>De " . $cookie_name . " kan bediend worden!</p>";
 		                            $user = "user";
 		                            $password = "user_12";
 		                            echo " 
@@ -109,6 +127,23 @@ include 'include/navigation.php';
                                             <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=2&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-down\"></button></a>
                                         </div>";
 	                            }
+                            }else{
+	                            if (!isset($_COOKIE[$cookie_name])) {
+		                            echo "<p>Camera is bezet. Probeer het over 2 min weer.</p>";
+	                            } else {
+		                            echo "<p>De " . $cookie_name . " kan bediend worden!</p>";
+		                            $user = "user";
+		                            $password = "user_12";
+		                            echo " 
+                                        <div id=\"cam-section\"\">
+                                            <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=6&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-left\"></button></a>
+                                            <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=nn&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-up\"></button></a>
+                                            <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=4&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-right\"></button></a>
+                                            <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=2&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-down\"></button></a>
+                                        </div>";
+	                            }
+
+
                             }
                             ?>
 
