@@ -67,8 +67,7 @@ include 'include/navigation.php';
                                 $Cid++;
                                 $x++;
                                }
-
-                                echo "</div>";
+                               echo "</div>";
 
                                 echo "spelType<select name = 'game'>";
                                 echo "<option value = ''></option>";
