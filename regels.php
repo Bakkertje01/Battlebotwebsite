@@ -174,7 +174,7 @@ include 'include/navigation.php';
                             <h4>Lijst toegestane obstakels </h4>
                             <ul>
                                 <li>Schoen, 1 punt</li>
-                                <li> vuilnisbak, 2 punten</li>
+                                <li>vuilnisbak, 2 punten</li>
                                 <li>Pion groot, 2 punten</li>
                                 <li>Pion klein, 1 punt</li>
                                 <li>Blikje, 1 punt</li>
