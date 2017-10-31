@@ -44,15 +44,15 @@ include 'include/navigation.php';
                         <div class="panel-body">
 
                             <?php
-                                $autorijd = false;
+                                $autorijd = true;
 
                                 if($autorijd == true){
-                                    echo "<audio controls>
-                                <source src='audio/Imagine Dragons - Whatever It Takes.mp3' type='audio/mpeg'>
-                            </audio>";
+                                    echo "<audio controls autoplay>
+                                          <source src='audio/Imagine Dragons - Whatever It Takes.mp3' type='audio/mpeg'>
+                                          </audio>";
                                 }
                                 else {
-                                    echo "auto rijdt niet";
+                                    echo "Auto rijdt niet";
                                 }
                             ?>
 
