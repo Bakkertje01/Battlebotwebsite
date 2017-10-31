@@ -119,12 +119,12 @@ include 'include/navigation.php';
                                     $p++;
                                     $pointy--;
                                 }
-                                echo "The score has been changed"."<br>";
+                                echo "The score has been changed."."<br>";
                             }else{
-                                echo "Please do not fill in the same team multiple times"."<br>";
+                                echo "Please do not fill in the same team multiple times."."<br>";
                             }
                         }else{
-                            echo "please fill in all of the dropdown boxes containing the teams, if you want to add points"."<br>";
+                            echo "please fill in all of the dropdown boxes containing the teams, if you want to add points."."<br>";
                         }
 
 
