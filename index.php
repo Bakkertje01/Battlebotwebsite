@@ -101,7 +101,7 @@ include 'include/navigation.php';
 		                            echo "De " . $cookie_name . " kan bediend worden!";
 		                            $user = "user";
 		                            $password = "user_12";
-		                            echo " 
+		                            echo "
                                         <div id=\"cam-section\"\">
                                             <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=6&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-left\"></button></a>
                                             <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=nn&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-up\"></button></a>
@@ -182,46 +182,18 @@ include 'include/navigation.php';
                         <p> Hier wordt data van de battlebot weergegeven. </p>
 
                         <div class="table-responsive">
-                            <table class="table table-bordered table-hover table-striped">
-                                <thead>
-                                <tr>
-                                    <th>Team</th>
-                                    <td>INF1F1A</td>
-                                    <td>INF1F1B</td>
-                                    <td>INF1F2A</td>
-                                    <td>INF1F2B</td>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th>Snelheid</th>
-                                    <td>2.1 km/h</td>
-                                    <td>4.2 km/h</td>
-                                    <td>3.9 km/h</td>
-                                    <td>5.1 km/h</td>
-                                </tr>
-                                <tr>
-                                    <th>Afstand</th>
-                                    <td>30 meter</td>
-                                    <td>30 meter</td>
-                                    <td>30 meter</td>
-                                    <td>30 meter</td>
-                                </tr>
-                                <tr>
-                                    <th>Display text</th>
-                                    <td>Aan</td>
-                                    <td>Aan</td>
-                                    <td>Aan</td>
-                                    <td>Aan</td>
-                                </tr>
-                                <tr>
-                                    <th>Rijtijd</th>
-                                    <td>5.41</td>
-                                    <td>7.21</td>
-                                    <td>3.53</td>
-                                    <td>6.50</td>
-                                </tr>
-                                </tbody>
+                            <table class="table table-bordered table-hover table-striped" id="table_bots">
+															<thead>
+																	<th>Bot</th>
+												          <th>Speed</th>
+												          <th>Distance</th>
+												          <th>Driving time</th>
+												          <th>Reconnect</th>
+																</tr>
+															</thead>
+															<tbody>
+
+															</tbody>
                             </table>
                         </div>
 
