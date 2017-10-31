@@ -72,9 +72,22 @@ include 'Include/navigation.php';
 					X
 				</button>
 			</div>
+        </div>
+
+            <?php
+            $autorijd = true;
+
+            if($autorijd == true){
+                echo "<audio controls autoplay>
+                                          <source src='audio/Imagine Dragons - Whatever It Takes.mp3' type='audio/mpeg'>
+                                          </audio>";
+            }
+            else {
+                echo "Auto rijdt niet"; //test
+            }
+            ?>
 
 
-		</div>
 
 		<!-- HIER EINDIGD DE CONTENT -->
 
