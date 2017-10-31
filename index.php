@@ -172,6 +172,11 @@ include 'include/navigation.php';
                 </div>
             </div>
 
+						<style>
+							tr.timeout, tr.timeout:hover{
+								background-color: red!important;
+							}
+						</style>
             <div class="col-lg-6">
                 <div class="panel panel-warning">
                     <div class="panel-heading">

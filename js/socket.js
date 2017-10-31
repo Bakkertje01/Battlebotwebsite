@@ -1,8 +1,21 @@
 var socket = io.connect('http://localhost:8080');
- var testBot = '{"speed":"300","time":"3000","mac":"80DAD343QRE","distance":"150","name":"bot17"}';
-
+var testBot = '{"speed":"300","time":"3000","mac":"80DAD343QRE","distance":"150","name":"bot17"}';
+var latestUpdate = new Array();
 //  addOrUpdateBot(testBot);
 
+function timeoutTimer(){
+  for (var i in latestUpdate){
+    if (typeof latestUpdate[i] !== 'function') {
+      if(Date.now() - latestUpdate[i] > 5000){
+        $('#table_bots > tbody > tr[mac="'+i+'"]').addClass('timeout');
+      }else{
+        $('#table_bots > tbody > tr[mac="'+i+'"]').removeClass('timeout');
+      }
+    }
+  }
+};
+
+setInterval(timeoutTimer, 1000);
  socket.on('connected', function (data) {
   //  $("h1").html('Connection established')
  });
@@ -41,17 +54,15 @@ var socket = io.connect('http://localhost:8080');
          $(this).find("td").eq(2).html(jsonobj.distance);
          $(this).find("td").eq(3).html(jsonobj.time);
          alreadyExist = true;
-         console.log("ding bestaat al");
-         return false;
+         latestUpdate[jsonobj.mac] = Date.now();
      }
    });
 
    //console.info(alreadyExist);
    // Bot did not yet exist... creating new row
    if(!alreadyExist){
-     console.log(alreadyExist);
      //console.info('<tr mac="' + jsonobj.mac + '"><td>' + jsonobj.name + '</td><td>' + jsonobj.speed + '</td><td>' + jsonobj.distance + '</td><td>' + jsonobj.time + '</td></tr>');
-     console.info("Created bot row: " + jsonobj.mac);
      $('#table_bots > tbody').append('<tr mac="' + jsonobj.mac + '"><td>' + jsonobj.name + '</td><td>' + jsonobj.speed + '</td><td>' + jsonobj.distance + '</td><td>' + jsonobj.time + '</td><td> <button class="btn btn-info" onclick="reconnect(\''+ jsonobj.name +'\')">reconnect</button>\n</td></tr>');
+     latestUpdate[jsonobj.mac] = Date.now();
    }
  }
