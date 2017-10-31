@@ -7,9 +7,14 @@ function timeoutTimer(){
   for (var i in latestUpdate){
     if (typeof latestUpdate[i] !== 'function') {
       if(Date.now() - latestUpdate[i] > 5000){
-        $('#table_bots > tbody > tr[mac="'+i+'"]').addClass('timeout');
+        $('#table_bots > tbody > tr[mac="'+i+'"]').addClass('danger');
+        $('#table_bots > tbody > tr[mac="'+i+'"]').attr('disabled',true);
+        $('#table_bots > tbody > tr[mac="'+i+'"]').find("td").eq(4).find('button').fadeIn();
       }else{
-        $('#table_bots > tbody > tr[mac="'+i+'"]').removeClass('timeout');
+        $('#table_bots > tbody > tr[mac="'+i+'"]').removeClass('danger');
+        $('#table_bots > tbody > tr[mac="'+i+'"]').attr('disabled',false);
+        $('#table_bots > tbody > tr[mac="'+i+'"]').find("td").eq(4).find('button').fadeOut();
+
       }
     }
   }
@@ -28,6 +33,12 @@ setInterval(timeoutTimer, 1000);
    $("h1").html(data)
  });
 
+// als verbinden failed (server kant) dan moet er een event gestuurd worden naar de client dat het niet is gelukt en de knop weer enabled moet / text updaten van de knop
+
+ socket.on('connection_failed', function(data){
+   console.log(data);
+ });
+
  function close(){
      socket.emit("close", "");
      console.info("Close command send...")
@@ -37,10 +48,10 @@ setInterval(timeoutTimer, 1000);
      socket.emit("search", "");
      console.info("Search command send...")
  }
- function reconnect(name){
+ function reconnect(name, mac){
      socket.emit("reconnectEvent", name);
-     console.info("reconnect command send...")
-     alert("Wordt op nieuw verbonden...");
+     $("button#" +mac).html("Verbinden...");
+     $("button#" +mac).attr("disabled", true);
  }
 
  function addOrUpdateBot(jsonString){
@@ -53,6 +64,8 @@ setInterval(timeoutTimer, 1000);
          $(this).find("td").eq(1).html(jsonobj.speed);
          $(this).find("td").eq(2).html(jsonobj.distance);
          $(this).find("td").eq(3).html(jsonobj.time);
+         $("button#" +jsonobj.mac).html("Opnieuw verbinden");
+         $("button#" +jsonobj.mac).attr("disabled", false);
          alreadyExist = true;
          latestUpdate[jsonobj.mac] = Date.now();
      }
@@ -62,7 +75,7 @@ setInterval(timeoutTimer, 1000);
    // Bot did not yet exist... creating new row
    if(!alreadyExist){
      //console.info('<tr mac="' + jsonobj.mac + '"><td>' + jsonobj.name + '</td><td>' + jsonobj.speed + '</td><td>' + jsonobj.distance + '</td><td>' + jsonobj.time + '</td></tr>');
-     $('#table_bots > tbody').append('<tr mac="' + jsonobj.mac + '"><td>' + jsonobj.name + '</td><td>' + jsonobj.speed + '</td><td>' + jsonobj.distance + '</td><td>' + jsonobj.time + '</td><td> <button class="btn btn-info" onclick="reconnect(\''+ jsonobj.name +'\')">reconnect</button>\n</td></tr>');
+     $('#table_bots > tbody').append('<tr mac="' + jsonobj.mac + '"><td>' + jsonobj.name + '</td><td>' + jsonobj.speed + '</td><td>' + jsonobj.distance + '</td><td>' + jsonobj.time + '</td><td> <button class="btn btn-info" id=\''+ jsonobj.mac + '\' onclick="reconnect(\''+ jsonobj.name +'\', this.id)">Opnieuw verbinden</button>\n</td></tr>');
      latestUpdate[jsonobj.mac] = Date.now();
    }
  }
