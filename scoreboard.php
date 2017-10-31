@@ -52,7 +52,10 @@ include 'include/navigation.php';
                            ${"DBresult".$Cid} = mysqli_query($connection, $DBcommand);
                            echo( ${"DBresult".$Cid} === false)? "query could not be executed": NULL;
                            $place = array("First","Second","Third","Fourth");
-                           echo "<tbody>";
+                           ?>
+                           <div class="panel-body">
+
+                                <?php
                                 echo "$place[$x]<select name = '$place[$x]'>";
                                 echo "<option></option>";
 
@@ -64,6 +67,8 @@ include 'include/navigation.php';
                                 $Cid++;
                                 $x++;
                                }
+
+                                echo "</div>";
 
                                 echo "spelType<select name = 'game'>";
                                 echo "<option value = ''></option>";
