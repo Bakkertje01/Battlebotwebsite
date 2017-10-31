@@ -42,16 +42,21 @@ include 'include/navigation.php';
                             <h3 class="panel-title"><i class="fa fa-quote-right fa-fw"></i> Voorbeeld panel met hele breedte</h3>
                         </div>
                         <div class="panel-body">
-                            <!--Content body hier!
-                            <p> Complete breedte. Zet hier de content in die de pagina moet weergeven.</p>
-                                <img src="foscam.serverict.nl" width='' onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 1000)' onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 5000)' alt='' />
-                            <img alt="" src="http://foscam.serverict.nl/videostream.cgi?user=guest&pwd=">
-                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=nn&onestep=5&user=guest&pwd=" target="control">[up]</a>
-                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=2&onestep=5&user=guest&pwd=" target="control">[Down]</a>
-                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=4&onestep=5&user=guest&pwd=" target="control">[Right]</a>
-                            <a href="http://foscam.serverict.nl/decoder_control.cgi?command=6&onestep=5&user=guest&pwd=" target="control">[Left]</a>
-                            <iframe name="control" height="1" width="1"></iframe>
-                            -->
+
+                            <?php
+                                $autorijd = false;
+
+                                if($autorijd == true){
+                                    echo "<audio controls>
+                                <source src='audio/Imagine Dragons - Whatever It Takes.mp3' type='audio/mpeg'>
+                            </audio>";
+                                }
+                                else {
+                                    echo "auto rijdt niet";
+                                }
+                            ?>
+
+
                         </div>
                     </div>
                 </div>
