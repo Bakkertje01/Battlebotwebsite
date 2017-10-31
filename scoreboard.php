@@ -52,11 +52,12 @@ include 'include/navigation.php';
                            ${"DBresult".$Cid} = mysqli_query($connection, $DBcommand);
                            echo( ${"DBresult".$Cid} === false)? "query could not be executed": NULL;
                            $place = array("First","Second","Third","Fourth");
+                           $pointPos = array("3 points","2 points","1 points","0 points");
                            ?>
                            <div class="panel-body">
 
                                 <?php
-                                echo "$place[$x]<select name = '$place[$x]'>";
+                                echo "$pointPos[$x]<select name = '$place[$x]'>";
                                 echo "<option></option>";
 
                                        while($row = mysqli_fetch_assoc(${"DBresult".$Cid})) {
