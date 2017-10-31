@@ -25,7 +25,7 @@ include 'include/navigation.php';
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                       volledige scores
+                       Volledige scores
                     </h1>
                 </div>
             </div>
@@ -38,7 +38,7 @@ include 'include/navigation.php';
                 <div class="col-lg-12">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa-fw"></i> scores</h3>
+                            <h3 class="panel-title"><i class="fa-fw"></i> Scores</h3>
                         </div>
                         <div class="panel-body">
                             <!--Content body hier! -->
