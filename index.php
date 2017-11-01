@@ -197,6 +197,17 @@ include 'include/navigation.php';
                             </table>
                         </div>
 
+
+												<div class="row">
+
+													<div class="col-md-8">
+														<input type="text" class="form-control" id="connectBot" placeholder="Groepnaam">
+													</div>
+													<div class="col-md-2">
+														<input type="button" class="btn btn-default" id="btnConnect" value="Connect bot" >
+													</div>
+
+												</div>
                     </div>
                 </div>
             </div>

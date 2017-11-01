@@ -41,6 +41,12 @@ setInterval(timeoutTimer, 1000);
    $("button#" + jsonobj.mac).attr("disabled", false);
  });
 
+$(document).ready(function(){
+  $("#btnConnect").click(function(){
+    reconnect($("#connectBot").val(), null);
+  });
+});
+
  function close(){
      socket.emit("close", "");
      console.info("Close command send...")
@@ -52,8 +58,10 @@ setInterval(timeoutTimer, 1000);
  }
  function reconnect(name, mac){
      socket.emit("reconnectEvent", name);
-     $("button#" +mac).html("Verbinden...");
-     $("button#" +mac).attr("disabled", true);
+     if(mac){
+       $("button#" +mac).html("Verbinden...");
+       $("button#" +mac).attr("disabled", true);
+     }
  }
 
  function addOrUpdateBot(jsonString){
@@ -77,7 +85,7 @@ setInterval(timeoutTimer, 1000);
    // Bot did not yet exist... creating new row
    if(!alreadyExist){
      //console.info('<tr mac="' + jsonobj.mac + '"><td>' + jsonobj.name + '</td><td>' + jsonobj.speed + '</td><td>' + jsonobj.distance + '</td><td>' + jsonobj.time + '</td></tr>');
-     $('#table_bots > tbody').append('<tr mac="' + jsonobj.mac + '"><td>' + jsonobj.name + '</td><td>' + jsonobj.speed + '</td><td>' + jsonobj.distance + '</td><td>' + jsonobj.time + '</td><td> <button class="btn btn-info" id=\''+ jsonobj.mac + '\' onclick="reconnect(\''+ jsonobj.name +'\', this.id)">Opnieuw verbinden</button>\n</td></tr>');
+     $('#table_bots > tbody').append('<tr mac="' + jsonobj.mac + '"><td>' + jsonobj.name + '</td><td>' + jsonobj.speed + '</td><td>' + jsonobj.distance + '</td><td>' + jsonobj.time + '</td><td> <button class="btn btn-info" id=\''+ jsonobj.mac + '\' onclick="reconnect(\''+ jsonobj.name +'\', this.id)">Opnieuw verbinden</button></td></tr>');
      latestUpdate[jsonobj.mac] = Date.now();
    }
  }
