@@ -30,13 +30,15 @@ setInterval(timeoutTimer, 1000);
  });
 
  socket.on('disconnect', function(data){
-   $("h1").html(data)
+  //  $("h1").html(data)
  });
 
 // als verbinden failed (server kant) dan moet er een event gestuurd worden naar de client dat het niet is gelukt en de knop weer enabled moet / text updaten van de knop
 
  socket.on('connection_failed', function(data){
-   console.log(data);
+   var jsonobj = $.parseJSON(data)
+   $("button#" + jsonobj.mac).html("Opniew verbinden");
+   $("button#" + jsonobj.mac).attr("disabled", false);
  });
 
  function close(){
