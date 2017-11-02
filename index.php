@@ -81,16 +81,30 @@ include 'include/navigation.php';
                             ?>
 
                             <?php
+                            if (isset($_SESSION['User_ID'])) {
+	                            $query = "SELECT Websitefunctie FROM user WHERE User_ID = " . $_SESSION['User_ID'];
+	                            $result = mysqli_query($connection, $query);
+	                            $row = mysqli_fetch_assoc($result);
+	                            if (!empty($result)) {
 
-                                    $user = "user";
-                                    $password = "user_12";
-                                    echo " 
-                                        <div id=\"cam-section\"\">
-                                            <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=6&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-left\"></button></a>
-                                            <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=nn&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-up\"></button></a>
-                                            <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=4&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-right\"></button></a>
-                                            <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=2&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-down\"></button></a>
-                                        </div>";
+		                            $functie = $row["Websitefunctie"];
+
+		                            switch ($functie) {
+			                            case "Camera":
+				                            $user = "user";
+				                            $password = "user_12";
+				                            echo " 
+                                            <div id=\"cam-section\"\">
+                                                <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=6&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-left\"></button></a>
+                                                <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=nn&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-up\"></button></a>
+                                                <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=4&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-right\"></button></a>
+                                                <a href=\"http://foscam.serverict.nl/decoder_control.cgi?command=2&onestep=5&user={$user}&pwd={$password}\" target=\"control\"><button id=\"cam-down\"></button></a>
+                                            </div>";
+				                            break;
+		                            }
+	                            }
+                            }
+
 
 
 
