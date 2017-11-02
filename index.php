@@ -59,6 +59,7 @@ include 'include/navigation.php';
 
                             <?php
                             echo "<img class = 'img-responsive' alt='' src='http://webcam.serverict.nl/videostream.cgi?user={$user}&pwd={$password}'>";
+
                             ?>
 
 
@@ -92,9 +93,11 @@ include 'include/navigation.php';
                                         </div>";
 
 
+
+
                             ?>
 
-
+                            <iframe name="control" height="0" width="0"></iframe>
 
 
 
