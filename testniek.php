@@ -1,7 +1,7 @@
 <?php
 include 'include/session.php';
 
-//include 'include/noacces/noacces_scoreboard.php';
+include 'include/noacces/noacces_scoreboard.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
