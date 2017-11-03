@@ -78,13 +78,14 @@
                                  </li>
                                   <li>
                                     <a href="controller.php"><i class="fa fa-fw fa-gamepad"></i> Besturing</a>
-                                  </li>';
+                                  </li>
+                                  <li>
+                                    <a href="signUp.php"><i class="fa fa-fw fa-newspaper-o"></i> Registreer gebruikers</a>
+                                </li>';
                             break;
                         default:
                             echo "";
                     }
-
-                   // unset($_POST);
 
                 }
             }
@@ -95,9 +96,7 @@
                 <a href="log.php"><i class="fa fa-fw fa-newspaper-o"></i> Logbestand</a>
             </li>
 
-            <li>
-                <a href="signUp.php"><i class="fa fa-fw fa-newspaper-o"></i> Registreer voor test</a>
-            </li>
+
 
             <!--
 					<li>

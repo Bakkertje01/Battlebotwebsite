@@ -1,6 +1,6 @@
 <?php
 include 'include/session.php';
-
+include 'include/db_connection.php';
 include 'include/noacces/noacces_scoreboard.php';
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ include 'include/noacces/noacces_scoreboard.php';
 
     <?php
     include 'include/head.php';
-    include 'include/db_connection.php';
+
 
     ?>
 
