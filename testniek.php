@@ -18,15 +18,20 @@ include 'include/session.php';
 
 <body>
 <?php
-include 'include/navigation.php';
+ include 'include/navigation.php';
 ?>
 
 <?php
 
+echo '<h1> -------------------------------------------- STAP 1</h1>';
 
+if (isset($_POST['test'])){
+    echo '<h1> -------------------------------------------- TEST</h1>';
+}
 
 if (isset($_POST['submit'])) {
 
+    echo '<h1> -------------------------------------------- STAP 2</h1>';
     //Check of velden ingevoerd zijn
     if(isset($_POST['spel']) && isset($_POST['first']) && isset($_POST['second']) && isset($_POST['third']) && isset($_POST['fourth'])){
 
@@ -188,19 +193,19 @@ if (isset($_POST['submit'])) {
 
 
 
-/*
-    $query = "INSERT INTO user (Gebruikersnaam, Wachtwoord, Websitefunctie, Battlebot_Battlebot_ID) VALUES
-		('" . $username . "', '" . $pass . "', '" . $function . "', '" . $botid .  "');";
-    $result = mysqli_query($connection, $query);
-    if (!empty($result)) {
-        $error_message = "";
-        echo "U bent geregistreerd ";
-        unset($_POST);
-        header('refresh:1;url=login.php');
-    } else {
-        echo "<h1>Registreren is niet gelukt! Probeer het opnieuw.</h1>";
-    }
-    mysqli_close($connection);*/
+    /*
+        $query = "INSERT INTO user (Gebruikersnaam, Wachtwoord, Websitefunctie, Battlebot_Battlebot_ID) VALUES
+            ('" . $username . "', '" . $pass . "', '" . $function . "', '" . $botid .  "');";
+        $result = mysqli_query($connection, $query);
+        if (!empty($result)) {
+            $error_message = "";
+            echo "U bent geregistreerd ";
+            unset($_POST);
+            header('refresh:1;url=login.php');
+        } else {
+            echo "<h1>Registreren is niet gelukt! Probeer het opnieuw.</h1>";
+        }
+        mysqli_close($connection);*/
 }
 
 ?>
@@ -280,6 +285,7 @@ if (isset($_POST['submit'])) {
                                 <p>INF1F2B <input type="checkbox" name="d4" value="INF1F2B"></p>
                                 <br><br>
                                 <button class="btn btn-warning" type="submit" name="submit">Invoeren</button>
+                                <button class="btn btn-warning" type="submit" name="test">Invoerennnnnnn</button>
                             </form>
 
                             <?php

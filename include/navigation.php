@@ -84,7 +84,7 @@
                             echo "";
                     }
 
-                    unset($_POST);
+                   // unset($_POST);
 
                 }
             }
