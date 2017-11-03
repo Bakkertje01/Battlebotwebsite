@@ -53,10 +53,10 @@ include 'include/navigation.php';
                        $place = array("First", "Second", "Third", "Fourth");
                        $pointPos = array("3 points", "2 points", "1 points", "0 points");
                        ?>
-                       <div class="panel-body">
+                       <!--<div class="panel-body">-->
 
                            <?php
-                           echo "$pointPos[$x]<select name = '$place[$x]'>";
+                           echo "<b>$pointPos[$x]</b><select name = '$place[$x]' class ='form-control'>";
                            echo "<option></option>";
 
                            while ($row = mysqli_fetch_assoc(${"DBresult" . $Cid})) {
@@ -67,9 +67,9 @@ include 'include/navigation.php';
                            $Cid++;
                            $x++;
                            }
-                           echo "</div>";
+                           //echo "</div>";
 
-                           echo "spelType<select name = 'game'>";
+                           echo "<b>spelType</b><select name = 'game'  class ='form-control'>";
                            echo "<option value = ''></option>";
 
                            for ($l = 1; $l <= 5; $l++) {
@@ -89,7 +89,8 @@ include 'include/navigation.php';
                            <p>INF1F2B <input type="checkbox" name="d4" value="INF1F2B"></p>
 
 
-                           <input type="submit" name="submit" value="submit">
+                           <!--<input type="submit" name="submit" value="submit">-->
+                       <button class="btn btn-warning" type="submit" name="submit"><b>Submit</b></button>
                    </form>
 
 
