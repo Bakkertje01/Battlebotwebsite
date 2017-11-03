@@ -3,6 +3,20 @@ include 'include/session.php';
 include 'include/db_connection.php';
 
 include 'include/noacces/noacces_controller.php';
+$userId = $_SESSION['User_ID'];
+$result = mysqli_query($connection, "SELECT
+																					`Botnaam`
+																			 FROM
+																			 		`battlebot`
+																			 INNER JOIN
+																			 	`user`
+																			 ON
+																			  `user`.Battlebot_Battlebot_ID = `battlebot`.Battlebot_ID
+																			 WHERE
+																			  `user`.User_ID = " . $userId);
+$res = mysqli_fetch_row($result)[0];
+
+
 ?>
 
 
@@ -18,6 +32,8 @@ include 'include/noacces/noacces_controller.php';
 <body>
 <?php
 include 'Include/navigation.php';
+
+echo '<input id="botNameField" hidden type="text" value="' . $res . '">';
 ?>
 <div id="wrapper">
 	<div id="page-wrapper">
