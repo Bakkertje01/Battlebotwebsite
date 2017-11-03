@@ -2,7 +2,7 @@
 function redirect_to($new_location)
 {
     header("Location: " . $new_location);
-    exit;
+
 }
 if (isset($_SESSION['User_ID'])) {
     $query = "SELECT Websitefunctie FROM user WHERE User_ID = " . $_SESSION['User_ID'];
