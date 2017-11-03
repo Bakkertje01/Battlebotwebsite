@@ -15,7 +15,7 @@ if (isset($_SESSION['User_ID'])) {
 }
 
 
-if (($functie == 'Admin') || ($functie == 'Jury')){
+if ($functie == 'Admin'){
 } else {
     redirect_to("index.php");
 }

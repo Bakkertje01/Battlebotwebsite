@@ -1,5 +1,7 @@
 <?php
+include 'include/session.php';
 include 'include/db_connection.php';
+include 'include/noacces/noacces_signUp.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +46,7 @@ if (isset($_POST['submit'])) {
         $result = mysqli_query($connection, $query);
         if (!empty($result)) {
             $error_message = "";
-            echo "U bent geregistreerd ";
+            //echo "U bent geregistreerd ";
             unset($_POST);
             header('refresh:1;url=login.php');
         } else {

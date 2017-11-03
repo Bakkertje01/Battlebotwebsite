@@ -74,17 +74,18 @@
                             break;
                         case "Admin":
                             echo '<li>
-                                    <a href="scoreboard.phpl"><i class="fa fa-fw fa-flag-checkered"></i> Punten Doorvoeren</a>
+                                    <a href="scoreboard.php"><i class="fa fa-fw fa-flag-checkered"></i> Punten Doorvoeren</a>
                                  </li>
                                   <li>
                                     <a href="controller.php"><i class="fa fa-fw fa-gamepad"></i> Besturing</a>
-                                  </li>';
+                                  </li>
+                                  <li>
+                                    <a href="signUp.php"><i class="fa fa-fw fa-newspaper-o"></i> Registreer gebruikers</a>
+                                </li>';
                             break;
                         default:
                             echo "";
                     }
-
-
 
                 }
             }
@@ -95,9 +96,7 @@
                 <a href="log.php"><i class="fa fa-fw fa-newspaper-o"></i> Logbestand</a>
             </li>
 
-            <li>
-                <a href="signUp.php"><i class="fa fa-fw fa-newspaper-o"></i> Registreer voor test</a>
-            </li>
+
 
             <!--
 					<li>
