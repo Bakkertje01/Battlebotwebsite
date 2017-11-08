@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
                             <option value="Admin">Admin</option>
                         </select>
                         <br>
-                        <label for="botid">Bot ID</label>
+                        <label for="botid">Bot naam</label>
                         <select name="botid" class="form-control">
                             <?php
 
