@@ -25,3 +25,5 @@
 
 <!-- Controller CSS -->
 <link href="css/controller.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/server.css">
