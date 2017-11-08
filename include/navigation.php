@@ -81,7 +81,12 @@
                                   </li>
                                   <li>
                                     <a href="signUp.php"><i class="fa fa-fw fa-newspaper-o"></i> Registreer gebruikers</a>
-                                </li>';
+                                  </li>
+                                  <li>
+                                    <a href="server"> <i class="fa fa-fw fa-terminal"></i> Server</a>
+                                  </li>
+                                
+                                ';
                             break;
                         default:
                             echo "";
