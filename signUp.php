@@ -55,6 +55,12 @@ if (isset($_POST['submit'])) {
     mysqli_close($connection);
     }
 
+    $query = "SELECT Battlebot_ID, Botnaam FROM Battlebot ORDER BY Botnaam DESC";
+    $result = mysqli_query($connection, $query);
+
+
+
+
 ?>
 
 
@@ -87,9 +93,19 @@ if (isset($_POST['submit'])) {
                         </select>
                         <br>
                         <label for="botid">Bot ID</label>
-                        <input type="number" id="botid" class="form-control" placeholder="Bot ID" name="botid" required>
+                        <select name="botid" class="form-control">
+                            <?php
+
+                            while($row = mysqli_fetch_assoc($result)){
+                                echo "<option value=\"{$row['Battlebot_ID']}\" > ";
+                                    echo $row['Botnaam'];
+                                echo "</option>";
+                            }
+
+                            ?>
+                        </select>
                         <br>
-                        <button class="btn btn-outline-warning" type="submit" name="submit">Login</button>
+                        <button class="btn btn-outline-warning" type="submit" name="submit">Registreren</button>
                     </form>
                 </div>
             </div>
