@@ -1,5 +1,7 @@
 # Created by https://www.gitignore.io/api/netbeans,phpstorm,notepadpp
 
+db_connection.php
+
 ### NetBeans ###
 nbproject/private/
 build/
