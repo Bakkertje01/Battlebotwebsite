@@ -51,7 +51,7 @@ include 'include/navigation.php';
                        ${"DBresult" . $Cid} = mysqli_query($connection, $DBcommand);
                        echo (${"DBresult" . $Cid} === false) ? "query could not be executed" : NULL;
                        $place = array("First", "Second", "Third", "Fourth");
-                       $pointPos = array("3 points", "2 points", "1 points", "0 points");
+                       $pointPos = array("4 points", "3 points", "2 points", "1 points");
                        ?>
 
                            <?php
@@ -108,7 +108,7 @@ include 'include/navigation.php';
                             && $third != $fourth) {
 
                             $p = 0;
-                            $pointy = 3;
+                            $pointy = 4;
 
                             while ($p <= 3) {
                                 $DBupdate = "UPDATE battlebot SET $gameType = $gameType + $pointy,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '${$var_array[$p]}' ";
