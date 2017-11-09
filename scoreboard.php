@@ -96,16 +96,16 @@ include 'include/navigation.php';
                     <?php
 
                     $var_array = array("first", "second", "third", "fourth");
-                    if (isset($_POST["submit"]) && $_POST['game'] != '' /*&& $_POST['First'] != ""
-                        && $_POST['Second'] != '' && $_POST['Third'] != '' && $_POST['Fourth'] != ''*/) {
+                    if (isset($_POST["submit"]) && $_POST['game'] != '' && $_POST['First'] != ""
+                        && $_POST['Second'] != '' && $_POST['Third'] != '' && $_POST['Fourth'] != '') {
 
                         for ($t = 0; $t <= 3; $t++) {
                             ${"$var_array[$t]"} = $_POST[$place[$t]];
 
                         }
                         $gameType = $_POST['game'];
-                        if ($first != $second && $first != $third && $first != $fourth && $second != $third && $second != $fourth
-                            && $third != $fourth) {
+                        /*if ($first != $second && $first != $third && $first != $fourth && $second != $third && $second != $fourth
+                            && $third != $fourth) {*/
 
                             $p = 0;
                             $pointy = 4;
@@ -118,9 +118,9 @@ include 'include/navigation.php';
                                 $pointy--;
                             }
                             echo "The score has been changed." . "<br>";
-                        } else {
+                       /* } else {
                             echo "Please do not fill in the same team multiple times." . "<br>";
-                        }
+                        }*/
                     } else {
                         echo "please fill in all of the dropdown boxes containing the teams, if you want to add points." . "<br>";
                     }
