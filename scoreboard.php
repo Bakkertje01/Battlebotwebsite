@@ -96,8 +96,8 @@ include 'include/navigation.php';
                     <?php
 
                     $var_array = array("first", "second", "third", "fourth");
-                    if (isset($_POST["submit"]) && $_POST['game'] != '' && $_POST['First'] != ""
-                        && $_POST['Second'] != '' && $_POST['Third'] != '' && $_POST['Fourth'] != '') {
+                    if (isset($_POST["submit"]) && $_POST['game'] != '' /*&& $_POST['First'] != ""
+                        && $_POST['Second'] != '' && $_POST['Third'] != '' && $_POST['Fourth'] != ''*/) {
 
                         for ($t = 0; $t <= 3; $t++) {
                             ${"$var_array[$t]"} = $_POST[$place[$t]];
