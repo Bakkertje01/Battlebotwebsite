@@ -1,9 +1,10 @@
 /**
  * Created by yaronlambers on 08/11/2017.
  */
-// (function(){
+(function(){
 var socket = io.connect('http://battlebot.serverict.nl:6969');
 var latestUpdate = new Array();
+var engineSound = document.getElementById("carSound");
 //  addOrUpdateBot(testBot);
 
 function timeoutTimer(){
@@ -129,6 +130,11 @@ function addOrUpdateBot(jsonString){
     var jsonobj = $.parseJSON(jsonString)
     var alreadyExist = false;
 
+    if(jsonobj.speed > 0){
+        if(engineSound.play());
+        console.log("yeeh");
+    }
+
     // Searching for existing row with this mac
     $('#table_bots > tbody  > tr').each(function() {
         if($(this).attr("mac") == jsonobj.mac){
@@ -149,4 +155,4 @@ function addOrUpdateBot(jsonString){
         latestUpdate[jsonobj.mac] = Date.now();
     }
 }
-// })();
+})();
