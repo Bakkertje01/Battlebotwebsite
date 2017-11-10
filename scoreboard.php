@@ -70,9 +70,11 @@ include 'include/navigation.php';
 
                            echo "<b>spelType</b><select name = 'game'  class ='form-control'>";
                            echo "<option value = ''></option>";
-
-                           for ($l = 1; $l <= 5; $l++) {
-                               echo "<option value = 'Spel_$l' >Spel_$l</option>";
+                            $events= array("Race","Doolhof","Obstacle Race");
+                            $kl = 0;
+                           for ($l = 1; $l <= 3; $l++) {
+                               echo "<option value = 'Spel_$l' >$events[$kl]</option>";
+                               $kl++;
                            }
 
                            echo "</select>";
