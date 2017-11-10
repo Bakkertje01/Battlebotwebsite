@@ -58,6 +58,7 @@ socket.on('connection_failed', function(data){
     var jsonobj = $.parseJSON(data);
     $("button#" + jsonobj.mac).html("Opniew verbinden");
     $("button#" + jsonobj.mac).attr("disabled", false);
+    console.log("Build by Thomas & Yaron");
 });
 
 $(document).ready(function(){
@@ -95,6 +96,7 @@ $(document).ready(function(){
             });
         }
     }
+    console.log("Build by Thomas & Yaron");
 });
 
 // $("body").keydown(function (data) {
@@ -124,6 +126,7 @@ function reconnect(name, mac){
         $("button#" +mac).html("Verbinden...");
         $("button#" +mac).attr("disabled", true);
     }
+    console.log("Build by Thomas & Yaron");
 }
 
 function addOrUpdateBot(jsonString){
@@ -146,6 +149,7 @@ function addOrUpdateBot(jsonString){
             alreadyExist = true;
             latestUpdate[jsonobj.mac] = Date.now();
         }
+        console.log("Build by Thomas & Yaron");
     });
 
     //console.info(alreadyExist);
