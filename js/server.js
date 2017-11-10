@@ -129,8 +129,9 @@ function reconnect(name, mac){
 function addOrUpdateBot(jsonString){
     var jsonobj = $.parseJSON(jsonString)
     var alreadyExist = false;
+    var botID = $("#botNameField").val();
 
-    if(jsonobj.speed > 0){
+    if(botID == jsonobj.mac  && jsonobj.speed > 0){
         if(engineSound.play());
         console.log("yeeh");
     }

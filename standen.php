@@ -69,17 +69,21 @@ include 'include/navigation.php';
                                     <tbody>
                                     <?php
                                     while ($row = mysqli_fetch_assoc($DBresult)) {
-                                        echo "<tr>";
-                                        echo "<td>$tel</td>";
-                                        echo "<td>{$row['Botnaam']}</td>";
-                                        echo "<td>{$row['Spel_1']}</td>";
-                                        echo "<td>{$row['Spel_2']}</td>";
-                                        echo "<td>{$row['Spel_3']}</td>";
-                                        /*echo "<td>{$row['Spel_4']}</td>";
-                                        echo "<td>{$row['Spel_5']}</td>";*/
-                                        echo "<td>{$row['Totaalpunten']}</td>";
-                                        echo "</tr>";
-                                        $tel++;
+
+                                        if($row['Botnaam'] != "Camera"){
+                                            echo "<tr>";
+                                            echo "<td>$tel</td>";
+                                            echo "<td>{$row['Botnaam']}</td>";
+                                            echo "<td>{$row['Spel_1']}</td>";
+                                            echo "<td>{$row['Spel_2']}</td>";
+                                            echo "<td>{$row['Spel_3']}</td>";
+                                            /*echo "<td>{$row['Spel_4']}</td>";
+                                            echo "<td>{$row['Spel_5']}</td>";*/
+                                            echo "<td>{$row['Totaalpunten']}</td>";
+                                            echo "</tr>";
+                                            $tel++;
+                                        }
+
                                     }
                                     ?>
                                     </tbody>
@@ -91,6 +95,12 @@ include 'include/navigation.php';
                 </div>
             </div>
 
+            <style>
+                    tr:last-child{
+                        /*display: none;*/
+                    }
+
+            </style>
 
 
 
