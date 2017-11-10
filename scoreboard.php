@@ -43,10 +43,10 @@ include 'include/navigation.php';
                        $x = 0;
                        $Cid = 1;
                        while ($Cid < 5){
-                       $DBname = "battlebot";
+                       //$DBname = "battlebot";
                        $DBtable = "battlebot";
-                       $selectDB = mysqli_select_db($connection, $DBname);
-                       echo ($selectDB === false) ? "DB could not connect" : NULL;
+                       //$selectDB = mysqli_select_db($connection, $DBname);
+                       echo ($connection === false) ? "DB could not connect" : NULL;
                        $DBcommand = "SELECT * FROM $DBtable ";
                        ${"DBresult" . $Cid} = mysqli_query($connection, $DBcommand);
                        echo (${"DBresult" . $Cid} === false) ? "query could not be executed" : NULL;
@@ -70,9 +70,11 @@ include 'include/navigation.php';
 
                            echo "<b>spelType</b><select name = 'game'  class ='form-control'>";
                            echo "<option value = ''></option>";
-
-                           for ($l = 1; $l <= 5; $l++) {
-                               echo "<option value = 'Spel_$l' >Spel_$l</option>";
+                            $events= array("Race","Doolhof","Obstacle Race");
+                            $kl = 0;
+                           for ($l = 1; $l <= 3; $l++) {
+                               echo "<option value = 'Spel_$l' >$events[$kl]</option>";
+                               $kl++;
                            }
 
                            echo "</select>";
