@@ -1,0 +1,126 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="controller.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="moment.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h1></h1> <p id="time"></p>
+        </div>
+
+        <div class="panel-body">
+            <!--Content body hier! -->
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped" id="table_bots">
+                    <thead>
+                        <th>Bot</th>
+                        <th>Speed</th>
+                        <th>Distance</th>
+                        <th>Driving time</th>
+                        <th>Reconnect</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <button class="btn btn-secondary btnConnectManual" type="button" onclick="reconnect('INF1F1A', null)">INF1F1A</button>
+                    <button class="btn btn-secondary btnConnectManual" type="button" onclick="reconnect('INF1F1B', null)">INF1F1B</button>
+                    <button class="btn btn-secondary btnConnectManual" type="button" onclick="reconnect('INF1F2A', null)">INF1F2A</button>
+                    <button class="btn btn-secondary btnConnectManual" type="button" onclick="reconnect('INF1F2B', null)">INF1F2B</button>
+                    <button class="btn btn-secondary btnConnectManual" type="button" onclick="reconnect(null, null)">Custom connect</button>
+                    <div class="console">
+                        <table id="console">
+                            <td>Welcome wizard, i hope you're having a great day!</td>
+                        </table>
+                    </div>
+                </div>
+
+                <!--<div class="col-md-12">-->
+                    <!--<div class="input-group">-->
+                        <!--<input type="text" id="connectBot" class="form-control" placeholder="Botname">-->
+                        <!--<span class="input-group-btn">-->
+                            <!--<button class="btn btn-secondary" id="btnConnect" type="button">Connect</button>-->
+                        <!--</span>-->
+                    <!--</div>-->
+
+                    <!--<p>&nbsp;</p>-->
+
+
+
+                <!--</div>-->
+
+                <div id="controller">
+                    <input type="text" class="form-control" id="botNameField" placeholder="Botnaam">
+                    <div class="section">
+                        <button id="left">
+
+                        </button>
+                        <button id="up">
+
+                        </button>
+                        <button id="right">
+
+                        </button>
+                        <button id="down">
+
+                        </button>
+                    </div>
+                    <div class="section">
+                        <button id="select">
+                            Stop
+                        </button>
+                        <button id="start">
+                            Start
+                        </button>
+                    </div>
+                    <div class="section">
+                        <button id="square">
+                            |_|
+                        </button>
+                        <button id="triangle">
+                            /\
+                        </button>
+                        <button id="circle">
+                            O
+                        </button>
+                        <button id="cross">
+                            X
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="spacer"></div>
+
+            <div class="alert alert-info">
+                <h3>Bot informatie</h3>
+                <p><strong>INF1F1A</strong> = bot19 = 201508041804</p>
+                <p><strong>INF1F1B</strong> = bot7 = 201507241621</p>
+                <p><strong>INF1F2A</strong> = bot11 = 98D331901B10</p>
+                <p><strong>INF1F2B</strong> = bot12 = 98D331307F4E</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="index.js"></script>
+
+</body>
+</html>
