@@ -51,7 +51,7 @@ include 'include/navigation.php';
                        ${"DBresult" . $Cid} = mysqli_query($connection, $DBcommand);
                        echo (${"DBresult" . $Cid} === false) ? "query could not be executed" : NULL;
                        $place = array("First", "Second", "Third", "Fourth");
-                       $pointPos = array("3 points", "2 points", "1 points", "0 points");
+                       $pointPos = array("4 points", "3 points", "2 points", "1 points");
                        ?>
 
                            <?php
@@ -96,19 +96,19 @@ include 'include/navigation.php';
                     <?php
 
                     $var_array = array("first", "second", "third", "fourth");
-                    if (isset($_POST["submit"]) && $_POST['game'] != '' && $_POST['First'] != ""
-                        && $_POST['Second'] != '' && $_POST['Third'] != '' && $_POST['Fourth'] != '') {
+                    if (isset($_POST["submit"]) && $_POST['game'] != '' /*&& $_POST['First'] != ""
+                        && $_POST['Second'] != '' && $_POST['Third'] != '' && $_POST['Fourth'] != ''*/) {
 
                         for ($t = 0; $t <= 3; $t++) {
                             ${"$var_array[$t]"} = $_POST[$place[$t]];
 
                         }
                         $gameType = $_POST['game'];
-                        if ($first != $second && $first != $third && $first != $fourth && $second != $third && $second != $fourth
-                            && $third != $fourth) {
+                        /*if ($first != $second && $first != $third && $first != $fourth && $second != $third && $second != $fourth
+                            && $third != $fourth) {*/
 
                             $p = 0;
-                            $pointy = 3;
+                            $pointy = 4;
 
                             while ($p <= 3) {
                                 $DBupdate = "UPDATE battlebot SET $gameType = $gameType + $pointy,Totaalpunten = Spel_1 + Spel_2 + Spel_3 + Spel_4 + Spel_5 WHERE Botnaam = '${$var_array[$p]}' ";
@@ -118,9 +118,9 @@ include 'include/navigation.php';
                                 $pointy--;
                             }
                             echo "The score has been changed." . "<br>";
-                        } else {
+                       /* } else {
                             echo "Please do not fill in the same team multiple times." . "<br>";
-                        }
+                        }*/
                     } else {
                         echo "please fill in all of the dropdown boxes containing the teams, if you want to add points." . "<br>";
                     }
