@@ -43,10 +43,10 @@ include 'include/navigation.php';
                        $x = 0;
                        $Cid = 1;
                        while ($Cid < 5){
-                       $DBname = "battlebot";
+                       //$DBname = "battlebot";
                        $DBtable = "battlebot";
-                       $selectDB = mysqli_select_db($connection, $DBname);
-                       echo ($selectDB === false) ? "DB could not connect" : NULL;
+                       //$selectDB = mysqli_select_db($connection, $DBname);
+                       echo ($connection === false) ? "DB could not connect" : NULL;
                        $DBcommand = "SELECT * FROM $DBtable ";
                        ${"DBresult" . $Cid} = mysqli_query($connection, $DBcommand);
                        echo (${"DBresult" . $Cid} === false) ? "query could not be executed" : NULL;
