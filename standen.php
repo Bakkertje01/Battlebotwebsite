@@ -58,11 +58,11 @@ include 'include/navigation.php';
                                     <tr>
                                         <th>Plaats</th>
                                         <th>Team</th>
-                                        <th>Race</th>
+                                        <th>vierhoek Race</th>
                                         <th>Doolhof</th>
                                         <th>Obstacle Race</th>
-                                        <!--<th>spel 4</th>
-                                        <th>spel 5</th> -->
+                                        <th>abc Race</th>
+                                        <!--<th>spel 5</th> -->
                                         <th>totaal</th>
                                     </tr>
                                     </thead>
@@ -77,8 +77,8 @@ include 'include/navigation.php';
                                             echo "<td>{$row['Spel_1']}</td>";
                                             echo "<td>{$row['Spel_2']}</td>";
                                             echo "<td>{$row['Spel_3']}</td>";
-                                            /*echo "<td>{$row['Spel_4']}</td>";
-                                            echo "<td>{$row['Spel_5']}</td>";*/
+                                            echo "<td>{$row['Spel_4']}</td>";
+                                            //echo "<td>{$row['Spel_5']}</td>";*/
                                             echo "<td>{$row['Totaalpunten']}</td>";
                                             echo "</tr>";
                                             $tel++;
