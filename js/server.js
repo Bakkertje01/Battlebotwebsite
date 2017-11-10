@@ -140,7 +140,7 @@ function addOrUpdateBot(jsonString){
         if($(this).attr("mac") == jsonobj.mac){
             $(this).find("td").eq(1).html(jsonobj.speed);
             $(this).find("td").eq(2).html(jsonobj.distance);
-            $(this).find("td").eq(3).html(jsonobj.time);
+            $(this).find("td").eq(3).html(moment().startOf('day').seconds(jsonobj.time).format('H:mm:s'));
             $(this).find("td").eq(4).html("Actief");
             alreadyExist = true;
             latestUpdate[jsonobj.mac] = Date.now();
